@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->datetime('datetime');
             $table->string('description');
-            $table->unsignedBigInteger('notes_id');
+            $table->unsignedBigInteger('notes_id')->nullable();
             $table->unsignedBigInteger('admin_id');
             $table->unsignedBigInteger('notesreply_id')->nullable();
             $table->foreign('notes_id')->references('id')->on('notes');

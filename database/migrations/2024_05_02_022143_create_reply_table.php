@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('description',2000);
             $table->datetime('datetime');
-            $table->unsignedBigInteger('comment_id');
+            $table->unsignedBigInteger('comment_id')->nullable();
             $table->unsignedBigInteger('petowner_id')->nullable();
             $table->unsignedBigInteger('animalrescuersandshelters_id')->nullable();
             $table->unsignedBigInteger('reply_id')->nullable();
