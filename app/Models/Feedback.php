@@ -17,4 +17,16 @@ class Feedback extends Model
         'datetime',
         'petowner_id',
     ];
+
+    public function petowner(){
+        return $this->belongsTo(PetOwner::class,'petowner_id');
+    }
+
+    public function like(){
+        return $this->hasMany(Like::class,'feedback_id');
+    }
+
+    public function feedbackreply(){
+        return $this->hasMany(FeedbackReply::class,'feedback_id');
+    }
 }

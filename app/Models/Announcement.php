@@ -17,4 +17,16 @@ class Announcement extends Model
         'title',
         'forumspecialuser_id',
     ];
+
+    public function forumspecialuser(){
+        return $this->belongsTo(ForumSpeacialUser::class, 'forumspecialuser_id');
+    }
+
+    public function comment(){
+        return $this->hasMany(Comment::class,'announcement_id');
+    }
+
+    public function pin(){
+        return $this->hasOne(Pin::class,'announcement_id');
+    }
 }

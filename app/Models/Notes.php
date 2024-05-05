@@ -16,4 +16,12 @@ class Notes extends Model
         'description',
         'admin_id',
     ];
+
+    public function admin(){
+        return $this->belongsTo(Admin::class,'admin_id');
+    }
+
+    public function notesreply(){
+        return $this->hasMany(NotesReply::class,'notes_id');
+    }
 }

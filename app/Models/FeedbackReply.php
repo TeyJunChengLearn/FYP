@@ -17,4 +17,12 @@ class FeedbackReply extends Model
         'feedback_id',
         'admin_id',
     ];
+
+    public function feedback(){
+        return $this->belongsTo(Feedback::class,'feedback_id');
+    }
+
+    public function admin(){
+        return $this->belongsTo(Admin::class,'admin_id');
+    }
 }

@@ -16,10 +16,10 @@ class Pet extends Model
         'gender',
         'birthdate',
         'image',
-        'user_id',
+        'petowner_id',
     ];
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'petowner_id');
     }
 }

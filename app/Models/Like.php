@@ -15,4 +15,12 @@ class Like extends Model
         'petowner_id',
         'feedback_id',
     ];
+
+    public function petowner(){
+        return $this->belongsTo(PetOwner::class,'petowner_id');
+    }
+
+    public function feedback(){
+        return $this->belongsTo(Feedback::class,'feedback_id');
+    }
 }

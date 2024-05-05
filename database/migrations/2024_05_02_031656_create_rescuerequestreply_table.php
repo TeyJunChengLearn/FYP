@@ -18,7 +18,6 @@ return new class extends Migration
             $table->unsignedBigInteger('petowner_id');
             $table->unsignedBigInteger('rescuerequest_id');
             $table->unsignedBigInteger('animalrescuersandshelters_id');
-            $table->unsignedBigInteger('sendersid');
             $table->foreign('petowner_id')->references('id')->on('petowner');
             $table->foreign('rescuerequest_id')->references('id')->on('rescuerequest');
             $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters');

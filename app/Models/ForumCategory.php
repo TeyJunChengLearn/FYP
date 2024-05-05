@@ -15,4 +15,12 @@ class ForumCategory extends Model
         'name',
         'admin_id',
     ];
+
+    public function admin(){
+        return $this->belongsTo(Admin::class,'admin_id');
+    }
+
+    public function forumpost(){
+        return $this->hasMany(ForumPost::class,'forumcategory_id');
+    }
 }

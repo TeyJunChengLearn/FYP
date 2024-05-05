@@ -5,33 +5,29 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ForumPost extends Model
+class RescueRequestReply extends Model
 {
     use HasFactory;
 
-    protected $table='forumpost';
+    protected $table='rescuerequestreply';
 
     protected $fillable=[
-        'datetime',
         'description',
-        'title',
+        'datetime',
         'petowner_id',
-        'forumcategory_id',
+        'rescuerequest_id',
         'animalrescuersandshelters_id',
     ];
 
     public function petowner(){
-        return $this->belongsTo(Petowner::class,'petowner_id');
+        return $this->belongsTo(PetOwner::class,'petowner_id');
     }
 
-    public function forumcategory(){
-        return $this->belongsTo(ForumCategory::class,'forumcategory_id');
+    public function rescuerequest(){
+        return $this->belongsTo(RescueRequest::class,'rescuerequest_id');
     }
 
     public function animalrescuersandshelters(){
         return $this->belongsTo(AnimalRescuerAndShelter::class,'animalrescuersandshelters_id');
-    }
-    public function comment(){
-        return $this->hasMany(Comment::class,'forumpost_id');
     }
 }

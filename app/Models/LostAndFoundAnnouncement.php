@@ -17,4 +17,16 @@ class LostAndFoundAnnouncement extends Model
         'title',
         'petowner_id',
     ];
+
+    public function petowner(){
+        return $this->belongsTo(PetOwner::class, 'petowner_id');
+    }
+
+    public function comment(){
+        return $this->hasMany(Comment::class,'lostandfoundannouncement_id');
+    }
+
+    public function pin(){
+        return $this->hasOne(Pin::class,'lostandfoundannouncement_id');
+    }
 }

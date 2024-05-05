@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('inquiries', function (Blueprint $table) {
             $table->id();
+            $table->string('title',400);
             $table->string('description',2000);
             $table->datetime('datetime');
             $table->unsignedBigInteger('forumspecialuser_id');
