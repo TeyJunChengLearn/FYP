@@ -30,7 +30,7 @@ class FetchLocations extends Command
         $keyword1 = 'pet clinic';
         $keyword2 = 'animal rescue and shelter';
 
-        $apiKey = "AIzaSyBR0Z8Pz5Lp3M1O5TPyDeeAWcGZT8L9X8g";
+        $apiKey = "";
         $baseUrl = 'https://maps.googleapis.com/maps/api/place/textsearch/json';
 
         $locations = array_merge(
