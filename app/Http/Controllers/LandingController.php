@@ -14,8 +14,8 @@ use PhpParser\NodeVisitor\FirstFindingVisitor;
 class LandingController extends Controller
 {
     public function index(request $request){
-        $data=AnimalRescuerAndShelter::find(1)->forumpost;
-        dd($data);
-        // return 1;
+        // $data=AnimalRescuerAndShelter::find(1)->forumpost;
+        // dd($data);
+        return 1;
     }
 }
