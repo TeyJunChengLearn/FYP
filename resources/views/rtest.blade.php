@@ -14,18 +14,19 @@
                 Have an account? <span id="signinLink" class="signin-link">Sign In</span>
             </div>
             <div class="title">Sign up to AllPets</div>
-            <form id="signupForm">
+            <form id="signupForm" method="POST" action="{{route('loginRegister.register')}}">
+                @csrf
                 <div class="input-container">
-                    <input type="text" class="input-field" placeholder="First Name" required>
+                    <input type="text" class="input-field" placeholder="First Name" name="firstName" required>
                 </div>
                 <div class="input-container">
-                    <input type="text" class="input-field" placeholder="Last Name" required>
+                    <input type="text" class="input-field" placeholder="Last Name" name="lastName"required>
                 </div>
                 <div class="input-container">
-                    <input type="email" class="input-field" placeholder="Email Address" required>
+                    <input type="email" class="input-field" placeholder="Email Address" name='email' required>
                 </div>
                 <div class="input-container">
-                    <input type="password" class="input-field" placeholder="Password" required>
+                    <input type="password" class="input-field" placeholder="Password" name="password"required>
                 </div>
                 <div class="checkbox-container">
                     <input type="checkbox" id="terms" required>
@@ -47,7 +48,18 @@
 
     <div id="signinModal" class="modal">
         <div class="modal-content">
-
+            <form id="signupForm" method="POST" action="{{route('loginRegister.login')}}">
+                @csrf
+                <div class="input-container">
+                    <input type="email" class="input-field" placeholder="Email Address" name='email' required>
+                </div>
+                <div class="input-container">
+                    <input type="password" class="input-field" placeholder="Password" name="password"required>
+                </div>
+                <button type="submit" class="button">
+                    SIGN IN NOW
+                </button>
+            </form>
         </div>
     </div>
 
@@ -57,7 +69,7 @@
             <span class="close">&times;</span>
             <h2>Terms and Conditions</h2>
             <p>Lemme cook -Danny
-                
+
                 </p>
         </div>
     </div>
@@ -66,7 +78,7 @@
         document.getElementById('signupForm').addEventListener('submit', function(event) {
             var inputs = document.querySelectorAll('.input-field');
             var valid = true;
-            
+
             inputs.forEach(function(input) {
                 if (!input.value) {
                     input.classList.add('required');
@@ -120,7 +132,7 @@
                 }
             }
         });
-        
+
     </script>
 </body>
 </html>

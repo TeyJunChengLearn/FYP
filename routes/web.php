@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LoginRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,10 @@ use App\Http\Controllers\LandingController;
 
 Route::get('/', [LandingController::class,'index']);
 
-Route::get('/', function () {
-    return view('lostnfound');
-});
+Route::get('/Loginregister',[LoginRegisterController::class,'index'])->name('loginRegister.index');
 
+Route::post('/register',[LoginRegisterController::class,'register'])->name('loginRegister.register');
+
+Route::post('/login',[LoginRegisterController::class,'login'])->name('loginRegister.login');
+
+Route::get('/logout',[LoginRegisterController::class,'logout'])->name('loginRegister.logout');

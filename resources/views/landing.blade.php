@@ -22,7 +22,12 @@
 			<ul id ="navbar">
 				<li><a href="forum.html">Forum</a></li>
 				<li><a href="adopt.html">Adopt/Marketplace</a></li>
-				<li><a href="login.html">Login/Register</a></li>
+
+                @if(Auth::user())
+                    <li><a href="{{route('loginRegister.logout')}}">Logout</a></li>
+                    @else
+                    <li><a href="{{route('loginRegister.index')}}">Login/Register</a></li>
+                @endif
 			</ul>
 		</div>
 	</section>
@@ -46,15 +51,15 @@
 	</section>
 
   </main>
-	
+
 	<footer class="section-p1">
-		
+
 		<div class="col">
 			<h4>Forum</h4>
 			<a href="about.html">All Breeds</a>
 			<a href="about.html">Lost and Found Announcement</a>
 		</div>
-		
+
 		<div class="col">
 			<h4>Adopt / Marketplace</h4>
 			<a href="#">Adopt</a>
@@ -65,15 +70,14 @@
 			<h4>Vetinary Assistance</h4>
 			<a href="#">Recommended / Nearby Hospitals</a>
 		</div>
-		
-	
+
+
 	</footer>
-	
-	
 
 
 
- 
+
+
+
     </body>
     </html>
-    
