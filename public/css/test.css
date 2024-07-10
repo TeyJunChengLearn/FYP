@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Josefin Sans;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.logo img {
+  max-height: 50px;
+  top: 0;
+  margin-top: 8px;
+}
+
+.header-pet{
+  max-height: 90px;
+  margin-top: 10px;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  padding: 20px 80px;
+  justify-content: space-between;
+  background: #FDF4E3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 80px;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4c1a1a;
+  transition: .3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: #99857e;
+}
+
+.home{
+  display:flex;
+  align-items: center;
+  min-height: 100vh;
+  background:url(/img/landing-1.png) no-repeat center center/cover;
+}
+
+.home .content{
+  max-width: 50rem;
+  margin-left: 2rem;
+
+}
+
+.home .content h3{
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+
+}
+
+.home .content span{
+  line-height: 1.5;
+  margin-left: 1rem;
+
+}
+/* Responsive design */
+
+/* For tablets and laptops */
+@media (max-width: 1024px) {
+  #header {
+    padding: 10px 40px;
+  }
+  #navbar li {
+    padding: 0 10px;
+  }
+  #navbar li a {
+    font-size: 14px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+  #header {
+    padding: 10px 20px;
+  }
+  #navbar {
+    flex-direction: column;
+  }
+  #navbar li {
+    padding: 10px 0;
+  }
+  #navbar li a {
+    font-size: 12px;
+  }
+}
+
+
+
+footer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+footer .col{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 10px;
+}
+
+footer .logo{
+	margin-bottom: 30px;
+}
+
+footer h4{
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+
+footer p{
+	font-size: 13px;
+	margin: 0 0 8px 0;
+}
+
+footer a{
+	font-size: 13px;
+	text-decoration: none;
+	color: #222;
+	margin-bottom: 10px;
+}
+
+footer a:hover,
+footer .follow i:hover{
+	color: #99857e;
+}

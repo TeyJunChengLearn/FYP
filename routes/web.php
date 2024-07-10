@@ -15,3 +15,8 @@ use App\Http\Controllers\LandingController;
 */
 
 Route::get('/', [LandingController::class,'index']);
+
+Route::get('/', function () {
+    return view('lostnfound');
+});
+
