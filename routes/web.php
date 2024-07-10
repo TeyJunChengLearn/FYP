@@ -32,3 +32,5 @@ Route::get('/test',[TestController::class,'index']);
 Route::get('/forum',[ForumController::class,'index'])->name('forum.index');
 
 Route::get('/forum/category/{cateogryId}',[ForumController::class,'forumCategoryIndex'])->name('forumCategory.index');
+
+Route::get('/forum/announcement',[ForumController::class,'forumAnnouncementIndex'])->name('forumAnnouncement.index');

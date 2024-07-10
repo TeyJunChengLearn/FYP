@@ -41,7 +41,7 @@
       <div class="row">
         <section class="left">
           <div class="inner-left">
-            <a href="#">
+            <a href="{{route('forumAnnouncement.index')}}">
                 <div class="box">
                 <div class="details">
                 <h3>Announcements and Notices</h3>
