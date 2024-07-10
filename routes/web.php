@@ -5,6 +5,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LoginRegisterController;
+use App\Http\Controllers\PaginationTestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,7 @@ Route::get('/forum',[ForumController::class,'index'])->name('forum.index');
 Route::get('/forum/category/{cateogryId}',[ForumController::class,'forumCategoryIndex'])->name('forumCategory.index');
 
 Route::get('/forum/announcement',[ForumController::class,'forumAnnouncementIndex'])->name('forumAnnouncement.index');
+
+Route::get('/paginationdisplayall',[PaginationTestController::class,'ShowDefaultDesign']);
+
+Route::get('/paginationdesign',[PaginationTestController::class,'designPaginationtemplate']);
