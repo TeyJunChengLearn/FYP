@@ -20,7 +20,7 @@
 		<a href="#" class="logo"><img src="/img/header-logo.png" alt=""/></a>
 		<div>
 			<ul id ="navbar">
-				<li><a href="forum.html">Forum</a></li>
+				<li><a href="{{route('forum.index')}}">Forum</a></li>
 				<li><a href="adopt.html">Adopt/Marketplace</a></li>
 
                 @if(Auth::user())

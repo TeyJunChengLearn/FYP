@@ -29,7 +29,7 @@
     </div>
 		<div>
 			<ul id ="navbar">
-				<li><a href="forum.html">Forum</a></li>
+				<li><a href="{{route('forum.index')}}">Forum</a></li>
 				<li><a href="adopt.html">Adopt/Marketplace</a></li>
 				<li><a href="login.html">User</a></li> <!--changes between User and username-->
 			</ul>
@@ -41,24 +41,30 @@
       <div class="row">
         <section class="left">
           <div class="inner-left">
-            <div class="box">
-              <div class="details">
-              <h3>Announcements and Notices</h3>
-              <span>General announcements, latest developments</span>
-              </div>
-            </div>
-            <div class="box">
-              <div class="details">
-              <h3>Events</h3>
-              <span>Latest happenings and events pertaining to pets and animal welfare</span>
-              </div>
-            </div>
-            <div class="box">
-              <div class="details">
-              <h3>Feedback and Suggestions</h3>
-              <span>Need help using our website, or have any comments or suggestions? Tell us about it here!</span>
-              </div>
-            </div>
+            <a href="#">
+                <div class="box">
+                <div class="details">
+                <h3>Announcements and Notices</h3>
+                <span>General announcements, latest developments</span>
+                </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="box">
+                    <div class="details">
+                    <h3>Events</h3>
+                    <span>Latest happenings and events pertaining to pets and animal welfare</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="box">
+                    <div class="details">
+                    <h3>Feedback and Suggestions</h3>
+                    <span>Need help using our website, or have any comments or suggestions? Tell us about it here!</span>
+                    </div>
+                </div>
+            </a>
             <div class="box-drop">
               <div class="details">
               <h3>Pets Categories</h3>
@@ -69,13 +75,18 @@
               </div>
             </div>
             <div class="dropdown">
-              <div class="dropdown-box">
-                <div class="dropdown-details">Dog
-                </div>
-                <div class="dropdown-arrow">
-                  <i class='fas fa-arrow-right'></i>
-                </div>
-              </div>
+                @foreach ($forumCategories as $forumCategory)
+                <a href='{{ route('forumCategory.index', ['cateogryId' => $forumCategory->id]) }}'>
+                    <div class="dropdown-box">
+                        <div class="dropdown-details">{{$forumCategory->name}}
+                        </div>
+                        <div class="dropdown-arrow">
+                        <i class='fas fa-arrow-right'></i>
+                        </div>
+                    </div>
+                </a>
+                @endforeach
+              {{--
               <div class="dropdown-box">
                 <div class="dropdown-details">Cat
                 </div>
@@ -117,7 +128,7 @@
                 <div class="dropdown-arrow">
                   <i class='fas fa-arrow-right'></i>
                 </div>
-              </div>
+              </div> --}}
             </div>
           </div>
 

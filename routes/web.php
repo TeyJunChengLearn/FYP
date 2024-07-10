@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LoginRegisterController;
 
@@ -24,3 +26,9 @@ Route::post('/register',[LoginRegisterController::class,'register'])->name('logi
 Route::post('/login',[LoginRegisterController::class,'login'])->name('loginRegister.login');
 
 Route::get('/logout',[LoginRegisterController::class,'logout'])->name('loginRegister.logout');
+
+Route::get('/test',[TestController::class,'index']);
+
+Route::get('/forum',[ForumController::class,'index'])->name('forum.index');
+
+Route::get('/forum/category/{cateogryId}',[ForumController::class,'forumCategoryIndex'])->name('forumCategory.index');

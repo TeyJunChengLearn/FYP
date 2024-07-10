@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('birthdate')->nullable();
             $table->string('description',100)->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->boolean('confirmed')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
