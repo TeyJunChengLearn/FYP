@@ -1,0 +1,37 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .title {
+    margin-bottom: 20px;
+  }
+  .pet-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .pet-container {
+    display: flex;
+    width: calc(50% - 60px); /* 50% of the width minus some space for margin */
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .pet-img {
+    width: 100%;
+    height: auto;
+  }
+  .pet-image {
+    flex: 1;
+    max-width: 40%;
+    margin-right: 20px;
+  }
+  .pet-details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }

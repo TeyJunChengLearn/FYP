@@ -1,0 +1,136 @@
+main h2 {
+    margin-bottom: 2.7rem;
+    font-size: var(--fs24);
+    color: var(--lightBlackColor);
+  }
+  
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+  }
+  
+  .left {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .inner-left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box {
+    background-color: #FFF8F2;
+    padding: 15px;
+    margin-bottom: 50px;
+    display: flex; /* Use flexbox for the box container */
+    justify-content: space-between; /* Distribute space between the items */
+    align-items: center; /* Align items vertically in the center */
+    cursor: pointer;
+  }
+  
+  .box-drop {
+    margin-bottom: 0px;
+    background-color: #FFF8F2;
+    padding: 15px;
+    display: flex; /* Use flexbox for the box container */
+    justify-content: space-between; /* Distribute space between the items */
+    align-items: center; /* Align items vertically in the center */
+    cursor: pointer;
+  }
+  .box:hover, .box-drop:hover{
+    color: grey;
+    background-color: #FEFBF8;
+  }
+  .box:hover span, .box-drop:hover span{
+    color: grey;
+  }
+  .box-drop:hover .dropdown-icon i{
+    color: grey;
+  }
+  .details h3 {
+    margin-top: 0;
+  }
+  
+  .details span {
+    color: #555;
+  }
+  
+  .dropdown-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  
+  .dropdown-icon i {
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+  }
+
+
+  .dropdown {
+    margin-top: 0px;
+    display: none;
+  }
+
+  .dropdown-box {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #D9D9D9;
+    padding: 10px;
+    margin-top: 0px;
+    font-size: 20px;
+    justify-content: space-between; /* Distribute space between the items */
+    align-items: center; /* Align items vertically in the center */
+    cursor: pointer;
+  
+  }
+
+
+  .dropdown-arrow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .dropdown-arrow i {
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+  }
+
+  .dropdown-box:hover{
+    color: grey;
+  }
+  .dropdown-box:hover .dropdown-arrow i{
+    color: grey;
+  }
+
+  
+  /* Adding some responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
