@@ -1,0 +1,14 @@
+1. please setting you env connect to your mysql
+2. then run "php artisan config:cache"
+3. then run "php artisan migrate"
+4. then run "php artisan test:paginationDB"
+5. add 2 lines of code into routes/web.php:
+Route::get('/paginationdisplayall',[PaginationTestController::class,'ShowDefaultDesign']);
+Route::get('/paginationdesign',[PaginationTestController::class,'designPaginationtemplate']);
+6. then run "php artisan route:cache"
+7. then run "php artisan serve"
+8. visit "/paginationdisplayall" to see the template (default css is link to bootstrap 5)
+9.if you like the specific pagination design please copy the source code from resources/views/vendor/pagination/"<template you like>" replace into resources/views/template/pagination.blade.php
+10. next if you want to design please add class or ID, then css setup will in public/css/pagination.css (please create one)
+11. link the css file into resources/views/pagination.blade.php to /css/pagination.css
+12. please setup the design, once you done inform JC
