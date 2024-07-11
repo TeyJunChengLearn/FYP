@@ -8,10 +8,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/test.css">
   <link rel="icon" href="kiwi-icon.png">
 
   <title>AllPets | Where Every Pet Finds A Home</title>
+  <style>
+
+  </style>
 </head>
 
 <body>
@@ -46,7 +51,7 @@
 		<div class="content">
 			<h3>Welcome to AllPets</h3>
 			<span>Where Every Pet Finds A Home</span>
-			<a href="#" class="btn">Get Started</a>
+			<a href="{{ route('loginRegister.index') }}" class="btn btn-warning">Get Started</a> 
 		</div>
 	</section>
 
@@ -72,12 +77,56 @@
 		</div>
 
 
+		
+		<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true" style="    --bs-modal-width: 700px;">
+			<div class="modal-dialog" >
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="progress" style="min-width: 100%; height: 34px; font-size: large;">
+						<div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 50%; color:black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Step 1</div>
+					  </div>
+					  <div class="container">
+						<div class="form-container" style="width:600px">
+							<div class="title">Sign Up New Account</div>
+							<form>
+								<div class="row">
+								  <div class="col">
+									<input type="text" class="form-control" placeholder="First Name">
+								  </div>
+								  <div class="col">
+									<input type="text" class="form-control" placeholder="Last Name">
+								  </div>
+								</div>
+								<div class="row">
+									<div class="col">
+									  <input type="date" class="form-control" placeholder="Date of Birth">
+									</div>
+									<div class="col">
+									  <input type="number" class="form-control" placeholder="Phone Number">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col">
+										<textarea class="form-control" placeholder="Tell us about yourself..." rows="3"></textarea>
+									</div>
+								</div>
+							  </form>
+						</div>
+					  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+		  
+
 	</footer>
-
-
-
-
-
+		    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
 
     </body>
     </html>

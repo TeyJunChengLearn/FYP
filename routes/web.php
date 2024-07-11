@@ -39,3 +39,4 @@ Route::get('/forum/announcement',[ForumController::class,'forumAnnouncementIndex
 Route::get('/paginationdisplayall',[PaginationTestController::class,'ShowDefaultDesign']);
 
 Route::get('/paginationdesign',[PaginationTestController::class,'designPaginationtemplate']);
+
