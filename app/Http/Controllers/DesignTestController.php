@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class DesignTestController extends Controller
 {
     public function index(){
-        return view('petdetails');
+        return view('admindashboard');
     }
 }
