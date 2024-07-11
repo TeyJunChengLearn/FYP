@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\DesignTestController;
 use App\Http\Controllers\LoginRegisterController;
 use App\Http\Controllers\PaginationTestController;
 
@@ -40,3 +41,4 @@ Route::get('/paginationdisplayall',[PaginationTestController::class,'ShowDefault
 
 Route::get('/paginationdesign',[PaginationTestController::class,'designPaginationtemplate']);
 
+Route::get('/designtest',[DesignTestController::class,'index']);
