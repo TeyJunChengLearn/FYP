@@ -1,4 +1,8 @@
 @extends('layouts.forumlayout')
+@section('css')
+<link rel="stylesheet" href="/css/test.css">
+  <link rel="stylesheet" href="/css/adoptplace.css">
+@endsection
 @section('content')
 <body>
   <main>
