@@ -10,7 +10,7 @@
         <p>Leave your feedbacks here regarding our website!</p>
         <button id="toggleFormBtn" class="btn btn-warning">Add Feedback</button>
         </div>
-        <form id="feedbackForm" method="GET" class="container m-5 p-4" style="background-color: white; display: none;">
+        <form id="feedbackForm" method="GET" class="container m-5 p-4" style="background-color: white;">
            <div>
                 <label for="forumComment" class="form-label">Leave a Feedback</label>
                 <textarea class="form-control" id="forumComment" rows="3" name='content' placeholder="Say something..."></textarea>
@@ -60,21 +60,6 @@
       </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
-        document.getElementById('toggleFormBtn').addEventListener('click', function() {
-            var form = document.getElementById('feedbackForm');
-            if (form.style.display === 'none' || form.style.display === '') {
-                form.style.display = 'block';
-            } else {
-                form.style.display = 'none';
-            }
-        });
-    
-        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            this.style.display = 'none'; // Hide the form
-            // Optionally, you can add code here to handle the form submission (e.g., send data to the server)
-        });
-    </script>
+
 
 @endsection
