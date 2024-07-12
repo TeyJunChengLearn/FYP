@@ -42,3 +42,4 @@ Route::get('/paginationdisplayall',[PaginationTestController::class,'ShowDefault
 Route::get('/paginationdesign',[PaginationTestController::class,'designPaginationtemplate']);
 
 Route::get('/designtest',[DesignTestController::class,'index']);
+

@@ -10,6 +10,6 @@ class TestController extends Controller
     public function index(){
         $data=Location::all();
 
-        return view('admindashboard',compact('data'));
+        return view('announcements',compact('data'));
     }
 }

@@ -21,7 +21,8 @@ class ForumController extends Controller
     }
 
     public function forumAnnouncementIndex(){
-        $lostAndFoundAnnouncements=LostAndFoundAnnouncement::orderBy('created_at', 'desc')->paginate(10);
-        return view('announcements',compact('lostAndFoundAnnouncements'));
+        // $lostAndFoundAnnouncements=LostAndFoundAnnouncement::orderBy('created_at', 'desc')->paginate(10);
+        // return view('announcements',compact('lostAndFoundAnnouncements'));
+        return view('announcements');
     }
 }
