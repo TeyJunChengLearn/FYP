@@ -62,6 +62,3 @@ Route::get('/paginationdesign',[PaginationTestController::class,'designPaginatio
 Route::get('/designtest',[DesignTestController::class,'index']);
 
 
-// Route::get('/', function () {
-//     return view('announcements');
-// });

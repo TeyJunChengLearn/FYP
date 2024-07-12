@@ -1,0 +1,20 @@
+.custom-pagination .page-link {
+    color: #ffc107; /* Bootstrap's warning color */
+    border: 1px solid #ffc107; /* Bootstrap's warning color */
+}
+
+.custom-pagination .page-item.active .page-link {
+    background-color: #ffc107; /* Bootstrap's warning color */
+    border-color: #ffc107; /* Bootstrap's warning color */
+    color: white;
+}
+
+.custom-pagination .page-link:hover {
+    background-color: #ffca2c; /* Slightly darker shade for hover effect */
+    border-color: #ffca2c;
+    color: white;
+}
+
+.custom-pagination .page-item.disabled .page-link {
+    color: #6c757d; /* Bootstrap's disabled color */
+}

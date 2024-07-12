@@ -167,7 +167,12 @@ footer .follow i:hover{
 	color: #99857e;
 }
 
-.hidden 
-{ 
-  display: none; 
+.hidden
+{
+  display: none;
+}
+
+a {
+    color: inherit; /* Inherits the color of the parent element */
+    text-decoration: none; /* Removes the underline */
 }

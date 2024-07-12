@@ -19,42 +19,24 @@
            </div>
         </form>
         <div class="container m-5 pt-4" style="background-color: white">
-            <div class="row">
-              <div class="col-auto col-center m-5">
-                <img src="/img/notstonk.jpg" style="max-height: 80px; max-width: 80px;">
-              </div>
-              <div class="col-10">
-                <h6>John Doe</h6>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                <p>10 minutes ago</p>
-
-            </div>
-            </div>
-        </div>
+            <div class="p-3">
+              <h6>John Doe</h6>
+              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+              <p>10 minutes ago</p>
+          </div>
+      </div>
         <div class="container m-5 pt-4" style="background-color: white">
-            <div class="row">
-              <div class="col-auto col-center m-5">
-                <img src="/img/notstonk.jpg" style="max-height: 80px; max-width: 80px;">
-              </div>
-              <div class="col-10">
-                <h6>John Doe</h6>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                <p>10 minutes ago</p>
-
-            </div>
-            </div>
-        </div>
+            <div class="p-3">
+              <h6>John Doe</h6>
+              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+              <p>10 minutes ago</p>
+          </div>
+      </div>
         <div class="container m-5 pt-4" style="background-color: white">
-            <div class="row">
-              <div class="col-auto col-center m-5">
-                <img src="/img/notstonk.jpg" style="max-height: 80px; max-width: 80px;">
-              </div>
-              <div class="col-10">
+              <div class="p-3">
                 <h6>John Doe</h6>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
                 <p>10 minutes ago</p>
-
-            </div>
             </div>
         </div>
       </div>
