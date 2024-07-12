@@ -50,19 +50,10 @@
                                 <textarea class="form-control" placeholder="Tell us about yourself..." rows="3"></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="signup-button" >
+                        <button type="submit" class="signup-button" id="submitButton">
                             SUBMIT
                             </button>
                       </form>
-                </div>
-                <div id="thankyou-phase" class="hidden" style="width:100%; text-align: center">
-                    <div class="m-5">
-                    <img src="/img/arrows.png"/>
-                    <h2><b>Yay!</b<</h2>
-                    <h4 class="">Your account is all set and ready to go!</h4>
-                    </div>
-                    <button class="forum-button">GO TO FORUM</button>
-                    <p class="m-1">Want to be a part of Animal rescue & shelters? <a href="#" class="link-warning">Apply</a></p>
                 </div>
             </div>
         </div>
@@ -74,20 +65,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#signup-Form').on('submit', function(event) {
-            event.preventDefault();
-    
-            // Show the thank you message and update the progress bar
-            $('#form-phase').addClass('hidden');
-            $('#thankyou-phase').removeClass('hidden');
-            $('.progress-bar').css('width', '100%').attr('aria-valuenow', '100').text('Step 2');
-    
-            // Here you can also add an AJAX request to submit the form data to the server
-        });
-    });
-    </script>
 
 <!-- Trigger the Modal -->
 

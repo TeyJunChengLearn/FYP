@@ -9,6 +9,8 @@
 body {
   width: 100%;
   overflow-x: hidden;
+  background-color: #fff8f2;
+
 }
 
 .logo img {
@@ -163,4 +165,9 @@ footer a{
 footer a:hover,
 footer .follow i:hover{
 	color: #99857e;
+}
+
+.hidden 
+{ 
+  display: none; 
 }
