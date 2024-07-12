@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use Illuminate\Http\Request;
 
 class DesignTestController extends Controller
 {
     public function index(){
-        return view('petdetails');
+        $locations=Location::all();
+        return view('map',compact('locations'));
     }
 }

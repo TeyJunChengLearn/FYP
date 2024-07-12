@@ -10,10 +10,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/test.css">
-  <link rel="stylesheet" href="/css/nologin.css">
   <link rel="icon" href="kiwi-icon.png">
-
+  @yield('css')
   <title>AllPets | Where Every Pet Finds A Home</title>
 </head>
 
