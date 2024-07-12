@@ -31,7 +31,7 @@ class LoginRegisterController extends Controller
             'email'=>$validateData['email'],
             'password'=>Hash::make($validateData['password']),
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Sign Up success please login');;
     }
 
     public function login(request $request){

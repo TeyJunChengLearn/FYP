@@ -17,6 +17,11 @@
                 Have an account? <span id="signinLink" class="signin-link" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In</span>
             </div>
             <div class="title">Sign up to AllPets</div>
+            @if (session('success'))
+                <div>
+                    {{ session('success') }}
+                </div>
+            @endif
             <form id="signupForm" method="POST" action="{{route('loginRegister.register')}}">
                 @csrf
                 <div class="input-container">
