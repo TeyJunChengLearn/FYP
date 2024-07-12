@@ -25,8 +25,8 @@
                     <h2><b>Yay!</b<</h2>
                     <h4 class="">Your account is all set and ready to go!</h4>
                     </div>
-                    <button class="forum-button">GO TO FORUM</button>
-                    <p class="m-1">Want to be a part of Animal rescue & shelters? <a href="#" class="link-warning">Apply</a></p>
+                    <a href='{{route('forum.index')}}'><button class="forum-button">GO TO FORUM</button></a>
+                    <p class="m-1">Want to be a part of Animal rescue & shelters? <a href="{{route('loginRegister.register.animalRescuer.Index')}}" class="link-warning">Apply</a></p>
                 </div>
             </div>
         </div>

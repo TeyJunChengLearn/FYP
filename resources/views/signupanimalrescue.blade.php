@@ -18,60 +18,52 @@
     <div>
       <div>
         <div>
-            <div id ="progress" class="progress m-5" style="height: 34px; font-size: large;">
+            <div id="progress" class="progress m-5" style="height: 34px; font-size: large;">
                 <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 50%; color:black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Step 1</div>
             </div>
             <div class="container">
                 <div id="form-phase" class="form-phase form-container" style="width:600px">
                     <div class="title">Sign Up as Animal Rescue</div>
-                    <form id="signup-Form" class="" style="width:80%;">
+                    <form id="signup-Form" style="width:80%;" method="POST" action="{{ route('loginRegister.register.animalRescuer.function') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="row p-3">
                           <div class="col">
-                            <input type="text" class="form-control" placeholder="Organization Name" required>
+                            <input type="text" class="form-control" placeholder="Organization Name" name="name" required>
                           </div>
                           <div class="col">
-                            <select id="structure" class="form-control">
+                            <select id="structure" class="form-control" name="organizationstructure">
                                 <option selected disabled>Organization Structure</option>
                                 <option>Non-profit</option>
                                 <option>Charitable</option>
-                              </select>                          
+                              </select>
                             </div>
                         </div>
                         <div class="row p-3">
                             <div class="col">
-                              <input type="text" class="form-control" placeholder="Location" required>
+                              <input type="text" class="form-control" placeholder="Location" name="location" required>
                             </div>
                             <div class="col">
-                              <input type="number" class="form-control" placeholder="Phone Number" required>
+                              <input type="text" class="form-control" placeholder="Phone Number" name="phonenumber" required>
                             </div>
                         </div>
                         <div class="row p-3">
                             <div class="col">
-                              <input type="number" class="form-control" placeholder="Tax Identification Number" required>
+                              <input type="text" class="form-control" placeholder="Tax Identification Number" name="taxIdentificationNumber" required>
                             </div>
                             <div class="col">
-                              <input type="file" class="form-control" id="businesspic"  required>
-                              <small>Upload Business License</small>
+                              <input type="file" class="form-control" id="businesspic" accept=".jpg, .jpeg, .png, .gif, .svg, .webp" name="licensePicture" required>
+                              <small>Upload Business License, Only accept(.jpg, .jpeg, .png, .gif, .svg, .webp)</small>
                             </div>
                         </div>
                         <div class="row p-3">
                             <div class="col">
-                                <textarea class="form-control" placeholder="Describe your organization..." rows="3"></textarea>
+                                <textarea class="form-control" placeholder="Describe your organization..." name="description" rows="3"></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="signup-button" >
+                        <button type="submit" class="signup-button">
                             SUBMIT
                             </button>
                       </form>
-                </div>
-                <div id="thankyou-phase" class="hidden" style="width:100%; text-align: center">
-                    <div class="m-5">
-                    <img src="/img/arrows.png"/>
-                    <h2><b>Yay!</b<</h2>
-                    <h4 class="">Your info is submitted and we will verify within the next 7 working days.</h4>
-                    <h4>Thank you for your patience.</h4>
-                    </div>
-                    <button class="forum-button">GO TO FORUM</button>
                 </div>
             </div>
         </div>
@@ -83,20 +75,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#signup-Form').on('submit', function(event) {
-            event.preventDefault();
-    
-            // Show the thank you message and update the progress bar
-            $('#form-phase').addClass('hidden');
-            $('#thankyou-phase').removeClass('hidden');
-            $('.progress-bar').css('width', '100%').attr('aria-valuenow', '100').text('Step 2');
-    
-            // Here you can also add an AJAX request to submit the form data to the server
-        });
-    });
-    </script>
 
 <!-- Trigger the Modal -->
 

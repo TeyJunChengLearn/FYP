@@ -24,30 +24,31 @@
             <div class="container">
                 <div id="form-phase" class="form-phase form-container" style="width:600px">
                     <div class="title">Sign Up New Account</div>
-                    <form id="signup-Form" class="" style="width:80%;">
+                    <form id="signup-Form" class="" style="width:80%;" method="POST" action='{{route('loginRegister.register.petowner')}}'>
+                        @csrf
                         <div class="row p-3">
                           <div class="col">
-                            <input type="text" class="form-control" placeholder="Username" required>
+                            <input type="text" class="form-control" placeholder="Username" name='username' required>
                           </div>
                           <div class="col">
-                            <select id="gender" class="form-control">
+                            <select id="gender" class="form-control" name='gender'>
                                 <option selected disabled>Gender</option>
                                 <option>Male</option>
                                 <option>Female</option>
-                              </select>                          
+                              </select>
                             </div>
                         </div>
                         <div class="row p-3">
                             <div class="col">
-                              <input type="date" class="form-control" placeholder="Date of Birth" required>
+                              <input type="date" class="form-control" placeholder="Date of Birth" name="birthdate" required>
                             </div>
                             <div class="col">
-                              <input type="number" class="form-control" placeholder="Phone Number" required>
+                              <input type="text" class="form-control" placeholder="Phone Number" name='phonenumber' required>
                             </div>
                         </div>
                         <div class="row p-3">
                             <div class="col">
-                                <textarea class="form-control" placeholder="Tell us about yourself..." rows="3"></textarea>
+                                <textarea class="form-control" placeholder="Tell us about yourself..." rows="3" name="description"></textarea>
                             </div>
                         </div>
                         <button type="submit" class="signup-button" id="submitButton">

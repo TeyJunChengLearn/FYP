@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('location',150);
             $table->string('phonenumber',15);
             $table->string('taxidentificationnumber',30);
-            $table->string('businesslicense',30);
+            $table->string('businesslicense');
             $table->string('description',100);
             $table->unsignedBigInteger('petowner_id');
             $table->foreign('petowner_id')->references('id')->on('petowner');

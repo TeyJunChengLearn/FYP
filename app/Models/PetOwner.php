@@ -32,6 +32,7 @@ class PetOwner extends Authenticatable
         'gender',
         'birthdate',
         'description',
+        'confirmed',
     ];
 
     /**

@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('lostandfoundannouncement', function (Blueprint $table) {
             $table->id();
+            $table->string('title',200);
             $table->string('description',2000);
             $table->datetime('datetime');
-            $table->string('title',200);
             $table->unsignedBigInteger('petowner_id');
             $table->foreign('petowner_id')->references('id')->on('petowner');
             $table->timestamps();

@@ -18,11 +18,11 @@
                 </div>
                 </div>
             </a>
-            <a href="#">
+            <a href="{{route('forumLostnFound.index')}}">
                 <div class="box">
                     <div class="details">
-                    <h3>Events</h3>
-                    <span>Latest happenings and events pertaining to pets and animal welfare</span>
+                    <h3>Lost and Found Announcement</h3>
+                    <span>Post about lost or found items to help reunite them with their owners.</span>
                     </div>
                 </div>
             </a>
@@ -45,7 +45,7 @@
             </div>
             <div class="dropdown">
                 @foreach ($forumCategories as $forumCategory)
-                <a href='{{ route('forumCategory.index', ['cateogryId' => $forumCategory->id]) }}'>
+                <a href='{{ route('forumCategory.index', ['categoryId' => $forumCategory->id]) }}'>
                     <div class="dropdown-box">
                         <div class="dropdown-details">{{$forumCategory->name}}
                         </div>

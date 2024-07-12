@@ -29,7 +29,7 @@
                     <h4 class="">Your info is submitted and we will verify within the next 7 working days.</h4>
                     <h4>Thank you for your patience.</h4>
                     </div>
-                    <button class="forum-button">GO TO FORUM</button>
+                    <a href='{{route('forum.index')}}'><button class="forum-button">GO TO FORUM</button></a>
                 </div>
             </div>
         </div>

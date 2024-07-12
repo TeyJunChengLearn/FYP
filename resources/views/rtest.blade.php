@@ -59,7 +59,7 @@
                 <div class="container">
                     <div class="form-container">
                         <div class="title">Welcome to AllPets!</div>
-                        <form id="signupForm" method="POST" action="{{route('loginRegister.register')}}">
+                        <form id="signupForm" method="POST" action="{{route('loginRegister.login')}}">
                             @csrf
                             <div class="input-container">
                                 <input type="email" class="input-field" placeholder="Email Address" name='email' required>

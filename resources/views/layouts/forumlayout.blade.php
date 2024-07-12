@@ -20,7 +20,7 @@
     <section id="header">
 
 		<div>
-      <a href="#" class="logo"><img src="/img/header-logo.png" alt=""/></a>
+      <a href="/" class="logo"><img src="/img/header-logo.png" alt=""/></a>
     </div>
     <div>
       <img src="/img/header-pets.png" alt=""/>

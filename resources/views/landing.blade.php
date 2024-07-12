@@ -22,7 +22,7 @@
 <body>
 
     <section id="header">
-		<a href="#" class="logo"><img src="/img/header-logo.png" alt=""/></a>
+		<a href="/" class="logo"><img src="/img/header-logo.png" alt=""/></a>
 		<div>
 			<ul id ="navbar">
 				<li><a href="{{route('forum.index')}}">Forum</a></li>
@@ -51,7 +51,7 @@
 		<div class="content">
 			<h3>Welcome to AllPets</h3>
 			<span>Where Every Pet Finds A Home</span>
-			<a href="{{ route('loginRegister.index') }}" class="btn btn-warning">Get Started</a> 
+			<a href="{{ route('loginRegister.index') }}" class="btn btn-warning">Get Started</a>
 		</div>
 	</section>
 
@@ -77,7 +77,7 @@
 		</div>
 
 
-		
+
 		<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true" style="    --bs-modal-width: 700px;">
 			<div class="modal-dialog" >
 			  <div class="modal-content">
@@ -122,7 +122,7 @@
 		  </div>
 		</div>
 
-		  
+
 
 	</footer>
 		    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
