@@ -40,8 +40,6 @@
             </div>
 
         </div>
-        <div class="container m-5 pt-4" style="background-color: white">
-      </div>
         @endforeach
 
         {{-- <div class="container m-5 pt-4" style="background-color: white">
