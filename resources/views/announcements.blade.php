@@ -6,9 +6,11 @@
 @section('content')
     <main>
       <div class="container m-5">
-        <div class="container"><h3><b>Announcements and Notices</b></h3></div>
+        <div class="container"><h3><b>Announcements and Notices</b></h3>
+        <button id="" class="btn btn-warning">Add Announcement</button>
+        </div>
         <div class="container m-5 pt-4" style="background-color: white">
-       
+
             <div class="container d-flex">
               <div class="col flex-grow-1">
                 <h5>Announcement title</h5>

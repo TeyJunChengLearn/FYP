@@ -6,7 +6,7 @@
 @section('content')
         <div class="container mt-5 pet-name"><h3 class="ms-4"><b>Oyen</b></h3></div>
         <div class="container mt-4 d-flex flex-row">
-            <div class="col image-container" >
+            <div class="col image-container" style="max-height: 100px">
                 <img src="/img/huhcat.jpg" alt="">
             </div>
             <div class="col table-container">

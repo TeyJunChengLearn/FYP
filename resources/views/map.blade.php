@@ -9,6 +9,7 @@
     </style>
 @endsection
 @section('content')
+
 <div id="map"></div>
     <h2 id="locationName">Select a location</h2>
     <p id="address">address</p>
