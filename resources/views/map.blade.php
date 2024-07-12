@@ -1,20 +1,43 @@
 @extends('layouts.forumlayout')
 @section('css')
 <link rel="stylesheet" href="/css/test.css">
-<link rel="stylesheet" href="/css/nologin.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
-        #map { height: 600px; }
+        #map {
+            height: 400px;
+        }
+        body {
+            background-color: #fff8f2;
+        }
     </style>
 @endsection
 @section('content')
+    <main>
+    <div class="container m-5">
+        <h3>Recommend/Nearby Hospitals</h3>
+        <p>A page where you can search through clinic or hospital all around Malaysia!</p>
+        <hr>
+    </div>
+    <div class="container mx-5 my-3">
+        <div class="row">
+            <div class="col">
+                <h5>Please Select a Location:</h5>
+                <h4 id="locationName"></h4>
+                    <p>Address:</p>
+                    <p id="address"></p>
+                    <p>Category:</p>
+                    <p id='category'></p>
+                    <p id="locationDescription"></p>
+            </div>
+            <div class="col">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    </main>
 
-<div id="map"></div>
-    <h2 id="locationName">Select a location</h2>
-    <p id="address">address</p>
-    <p id='category'>category</p>
-    <p id="locationDescription"></p>
 
     <script>
         // Set the map view to the center of Malaysia
@@ -70,4 +93,6 @@
 
         map.locate({setView: true, maxZoom: 16});
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 @endsection

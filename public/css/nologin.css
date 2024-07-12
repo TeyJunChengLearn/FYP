@@ -3,39 +3,39 @@ main h2 {
     font-size: var(--fs24);
     color: var(--lightBlackColor);
   }
-  
+
   body {
     font-family: 'Josefin Sans', sans-serif;
-    background-color: #ffffff;
+    background-color: #FFF8F2;
     margin: 0;
     padding: 0;
   }
-  
+
   .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
     margin-top: 50px;
   }
-  
+
   .row {
     display: flex;
     flex-wrap: wrap;
     margin: -10px;
   }
-  
+
   .left {
     flex: 1;
     padding: 10px;
   }
-  
+
   .inner-left {
     display: flex;
     flex-direction: column;
   }
-  
+
   .box {
-    background-color: #FFF8F2;
+    background-color: white;
     padding: 15px;
     margin-bottom: 50px;
     display: flex; /* Use flexbox for the box container */
@@ -43,10 +43,10 @@ main h2 {
     align-items: center; /* Align items vertically in the center */
     cursor: pointer;
   }
-  
+
   .box-drop {
     margin-bottom: 0px;
-    background-color: #FFF8F2;
+    background-color: white;
     padding: 15px;
     display: flex; /* Use flexbox for the box container */
     justify-content: space-between; /* Distribute space between the items */
@@ -66,11 +66,11 @@ main h2 {
   .details h3 {
     margin-top: 0;
   }
-  
+
   .details span {
     color: #555;
   }
-  
+
   .dropdown-icon {
     display: flex;
     justify-content: flex-end;
@@ -78,7 +78,7 @@ main h2 {
     margin-top: 10px;
     margin-right: 10px;
   }
-  
+
   .dropdown-icon i {
     font-size: 18px;
     color: black;
@@ -101,7 +101,8 @@ main h2 {
     justify-content: space-between; /* Distribute space between the items */
     align-items: center; /* Align items vertically in the center */
     cursor: pointer;
-  
+    background-color: white;
+
   }
 
 
@@ -111,7 +112,7 @@ main h2 {
     align-items: center;
     margin-right: 10px;
   }
-  
+
   .dropdown-arrow i {
     font-size: 18px;
     color: black;
@@ -125,7 +126,7 @@ main h2 {
     color: grey;
   }
 
-  
+
   /* Adding some responsiveness */
   @media (max-width: 768px) {
     .container {
@@ -133,4 +134,3 @@ main h2 {
       padding: 10px;
     }
   }
-  

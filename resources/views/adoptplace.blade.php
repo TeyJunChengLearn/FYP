@@ -10,9 +10,6 @@
       <div class="title">
         <h2>Adopt A Pet</h2>
       </div>
-      <div>
-        filter goes here later baru fikir
-      </div>
       <div class="pet-list">
         <div class="pet-container">
           <div class="pet-image"><img class="pet-img" src="/img/huhcat.jpg" alt="Fluffy"></div>

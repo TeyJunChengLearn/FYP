@@ -34,16 +34,16 @@
         @endif --}}
         @foreach ($forumPost->comment as $comment)
         <div class="container m-5 pt-4" style="background-color: white">
-            <div class="row">
-              <div class="col-auto col-center m-5">
-                <p>{{$comment->petowner->username}}</p>
-              </div>
-              <div class="col-10">
-                {{$comment->description}}
+            <div class="p-3">
+                <h6>{{$comment->petowner->username}}</h6>
+                <p>{{$comment->description}}</p>
             </div>
-            </div>
+
         </div>
+        <div class="container m-5 pt-4" style="background-color: white">
+      </div>
         @endforeach
+
         {{-- <div class="container m-5 pt-4" style="background-color: white">
             <div class="row">
               <div class="col-auto col-center m-5">
