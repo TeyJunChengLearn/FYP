@@ -27,6 +27,7 @@
     </div>
 		<div>
 			<ul id ="navbar">
+                <li><a href="adopt.html">Nearby</a></li>
 				<li><a href="{{route('forum.index')}}">Forum</a></li>
 				<li><a href="adopt.html">Adopt/Marketplace</a></li>
                 @if(Auth::user())
