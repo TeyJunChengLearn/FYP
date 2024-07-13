@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Storage;
 class LoginRegisterController extends Controller
 {
     public function index(){
+        if(Auth::user()){
+            return redirect('/');
+        }
         return view('rtest');
     }
 
