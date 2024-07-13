@@ -5,6 +5,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\DesignTestController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\LoginRegisterController;
 use App\Http\Controllers\PaginationTestController;
 
@@ -73,4 +74,6 @@ Route::get('/paginationdesign',[PaginationTestController::class,'designPaginatio
 
 Route::get('/designtest',[DesignTestController::class,'index']);
 
+Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
 
+Route::get('/notifications/{id}', [NotificationController::class, 'show'])->name('notifications.show');

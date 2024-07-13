@@ -30,6 +30,7 @@
 				<li><a href="adopt.html">Adopt/Marketplace</a></li>
 
                 @if(Auth::user())
+                    <li><a href="{{route('notifications.index')}}">notification</a></li>
                     <li><a href="{{route('loginRegister.logout')}}">Logout</a></li>
                     @else
                     <li><a href="{{route('loginRegister.index')}}">Login/Register</a></li>
@@ -62,7 +63,7 @@
 
 		<div class="col">
 			<h4>Forum</h4>
-			<a href="about.html">All Breeds</a>
+			<a href="about.html">Forum List</a>
 			<a href="about.html">Lost and Found Announcement</a>
 		</div>
 

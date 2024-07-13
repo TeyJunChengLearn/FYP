@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Announcement;
 use Carbon\Carbon;
 use App\Models\Comment;
 use App\Models\Feedback;
 use App\Models\ForumPost;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Models\ForumCategory;
 use Illuminate\Support\Facades\Session;
 use App\Models\LostAndFoundAnnouncement;
+use App\Notifications\NewCommentNotification;
+use Illuminate\Support\Facades\Notification;
 
 class ForumController extends Controller
 {
@@ -64,13 +66,14 @@ class ForumController extends Controller
     public function forumPostAddComment(request $request){
         // dd($request->all());
         $user=Session::get('user');
-        Comment::create([
+        $comment=Comment::create([
             'description'=>$request->content,
             'datetime'=>Carbon::now(),
             'forumpost_id'=>$request->forumId,
             'petowner_id'=>$user['user'],
         ]);
-
+        $postAuthor=$comment->forumpost->petowner;
+        Notification::send($postAuthor, new NewCommentNotification($comment));
         return redirect()->back();
     }
 
@@ -142,13 +145,13 @@ class ForumController extends Controller
 
     public function forumAnnouncementCommentAdd(request $request){
         // dd($request->all());
-        Comment::create([
+        $comment=Comment::create([
             'description'=>$request->content,
             'datetime'=>Carbon::now(),
             'announcement_id'=>$request->announcementId,
             'petowner_id'=>Session::get('user')['user'],
         ]);
-
+        // Notification::send($postAuthor, new NewCommentNotification($comment));
         return redirect()->back();
     }
 }
