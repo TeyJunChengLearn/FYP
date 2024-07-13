@@ -49,11 +49,23 @@ Route::post('/forum/category/comment/add',[ForumController::class,'forumPostAddC
 
 Route::get('/forum/announcement',[ForumController::class,'forumAnnouncementIndex'])->name('forumAnnouncement.index');
 
+Route::post('/forum/announcement/add',[ForumController::class,'forumAnnouncementAdd'])->name('forumAnnouncement.add');
+
+Route::get('/forum/announcement/details/{announcementId}',[ForumController::class,'forumAnnouncementDetailsIndex'])->name('forumAnnouncementDetails.Index');
+
+Route::post('/forum/announcement/details/comment/add',[ForumController::class,'forumAnnouncementCommentAdd'])->name('forumAnnouncementAdd.add');
+
 Route::get('/forum/lostnfound',[ForumController::class,'forumLostnfoundIndex'])->name('forumLostnFound.index');
 
 Route::post('/forum/lostnfound/add',[ForumController::class,'forumLostnfoundAdd'])->name('forumLostnFound.Add');
 
 Route::get('/forum/lostnfound/{lostnFoundId}',[ForumController::class,'forumLostnfoundDetailsIndex'])->name('forumLostnFoundDetails.index');
+
+Route::post('/forum/lostnfound/comment/add',[ForumController::class,'forumLostnfoundCommentAdd'])->name('forumLostnFoundComment.add');
+
+Route::get('/forum/feedback',[ForumController::class,'forumFeedbackIndex'])->name('forumFeedback.index');
+
+Route::post('/forum/feedback/add',[ForumController::class,'forumFeedbackAdd'])->name('forumFeedback.add');
 
 Route::get('/paginationdisplayall',[PaginationTestController::class,'ShowDefaultDesign']);
 

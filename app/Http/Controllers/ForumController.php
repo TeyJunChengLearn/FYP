@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Announcement;
 use Carbon\Carbon;
 use App\Models\Comment;
+use App\Models\Feedback;
 use App\Models\ForumPost;
 use Illuminate\Http\Request;
 use App\Models\ForumCategory;
@@ -26,12 +28,14 @@ class ForumController extends Controller
     }
 
     public function forumAnnouncementIndex(){
-        return view('announcements');
+        $user=Session::get('user');
+        $announcements=Announcement::orderBy('created_at', 'desc')->paginate(5);
+        return view('announcements',compact('user','announcements'));
     }
 
     public function forumLostnfoundIndex(){
         $user=Session::get('user');
-        $lostnFoundAnnouncements=LostAndFoundAnnouncement::paginate(5);
+        $lostnFoundAnnouncements=LostAndFoundAnnouncement::orderBy('created_at', 'desc')->paginate(5);
         return view('lostnfound',compact('lostnFoundAnnouncements','user'));
     }
 
@@ -71,7 +75,10 @@ class ForumController extends Controller
     }
 
     public function forumLostnfoundDetailsIndex($lostnFoundId){
-        dd($lostnFoundId);
+        // dd($lostnFoundId);
+        $user=Session::get('user');
+        $lostAndFoundannouncement=LostAndFoundAnnouncement::find($lostnFoundId);
+        return view('lostnfounddetails',compact('lostAndFoundannouncement','user'));
     }
 
     public function forumLostnfoundAdd(request $request){
@@ -82,6 +89,64 @@ class ForumController extends Controller
             'datetime'=>Carbon::now(),
             'title'=>$request->title,
             'petowner_id'=>$user['user'],
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function forumFeedbackIndex(){
+        $user=Session::get('user');
+        $feedbacks=Feedback::orderBy('created_at', 'desc')->paginate(5);
+        return view('feedback',compact('user','feedbacks'));
+    }
+
+    public function forumFeedbackAdd(request $request){
+        // dd($request->all());
+        Feedback::create([
+            'description'=>$request->description,
+            'star'=>5,
+            'datetime'=>Carbon::now(),
+            'petowner_id'=>Session::get('user')['user'],
+        ]);
+        return redirect()->back();
+    }
+
+    public function forumAnnouncementAdd(request $request){
+        // dd($request->all());
+        Announcement::create([
+            'description'=>$request->description,
+            'datetime'=>Carbon::now(),
+            'title'=>$request->title,
+            'forumspecialuser_id'=>Session::get('user')['forumspecialuser']['forumspecialuser_id'],
+        ]);
+        return redirect()->back();
+    }
+
+    public function forumAnnouncementDetailsIndex($announcementId){
+        // dd($announcementId);
+        $user=Session::get('user');
+        $announcement=Announcement::find($announcementId);
+        return view('announcementdetails',compact('user','announcement'));
+    }
+
+    public function forumLostnfoundCommentAdd(request $request){
+        // dd($request->all());
+        Comment::create([
+            'description'=>$request->content,
+            'datetime'=>Carbon::now(),
+            'lostandfoundannouncement_id'=>$request->lostNFoundId,
+            'petowner_id'=>Session::get('user')['user'],
+        ]);
+        return redirect()->back();
+    }
+
+    public function forumAnnouncementCommentAdd(request $request){
+        // dd($request->all());
+        Comment::create([
+            'description'=>$request->content,
+            'datetime'=>Carbon::now(),
+            'announcement_id'=>$request->announcementId,
+            'petowner_id'=>Session::get('user')['user'],
         ]);
 
         return redirect()->back();

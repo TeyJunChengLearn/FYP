@@ -6,14 +6,15 @@
 @section('css')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/test.css">
+<link rel="stylesheet" href="/css/pagination.css">
 @endsection
 @section('content')
     <main>
       <div class="container m-5">
-        <div class="container"><h3><b>Lost and Found Announcement</b></h3>
+        <div class="container"><h3><b>Lost and Found Announcement</b></h3></div>
             @if ($user!=false)
                 <button id="toggleFormBtn" class="btn btn-warning">Add Lost and Found Announcement</button>
-                </div>
+
                 <form id="announcementForm" method="POST" action='{{route('forumLostnFound.Add')}}' class="container m-5 p-4" style="background-color: white; display: none">
                     @csrf
                     <div>
@@ -26,6 +27,7 @@
             @endif
 
         <div class="container m-5 pt-4" style="background-color: white">
+            @if(!$lostnFoundAnnouncements->isEmpty())
             @foreach ($lostnFoundAnnouncements as $lostnFoundAnnouncement)
             <a href="{{route('forumLostnFoundDetails.index',['lostnFoundId'=>$lostnFoundAnnouncement->id])}}">
                 <div class="container d-flex">
@@ -40,6 +42,9 @@
             </a>
             <hr>
             @endforeach
+                @else
+                <p>there is no lost and found announcement</p>
+            @endif
             {{-- <a href="#">
                 <div class="container d-flex">
                 <div class="col flex-grow-1">
@@ -89,6 +94,9 @@
             </a>
             <hr> --}}
         </div>
+      </div>
+      <div class="container m-5">
+        {{ $lostnFoundAnnouncements->links('template.pagination') }}
       </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -41,7 +41,7 @@ class Comment extends Model
         return $this->belongsTo(AnimalRescuerAndShelter::class,'animalrescuersandshelters_id');
     }
 
-    public function comment(){
+    public function reply(){
         return $this->hasMany(Reply::class,'comment_id');
     }
 }

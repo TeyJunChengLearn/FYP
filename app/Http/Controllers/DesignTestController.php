@@ -9,6 +9,6 @@ class DesignTestController extends Controller
 {
     public function index(){
         $locations=Location::all();
-        return view('announcements',compact('locations'));
+        return view('map',compact('locations'));
     }
 }

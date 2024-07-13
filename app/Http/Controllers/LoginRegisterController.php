@@ -54,17 +54,70 @@ class LoginRegisterController extends Controller
                         'status'=>false,
                     ]
                 ];
+                if(!empty($userModel->admin->forumspecialuser)){
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>true,
+                            'admin_id'=>$userModel->admin->id,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>false,
+                        ],
+                        'forumspecialuser'=>[
+                            'status'=>true,
+                            'forumspecialuser_id'=>$userModel->admin->forumspecialuser->id,
+                        ]
+                    ];
+                }else{
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>true,
+                            'admin_id'=>$userModel->admin->id,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>false,
+                        ],
+                        'forumspecialuser'=>[
+                            'status'=>false,
+                        ]
+                    ];
+                }
             }else if(!empty($userModel->animalrescuersandshelters)){
-                $user=[
-                    'user'=>Auth::id(),
-                    'admin'=>[
-                        'status'=>false,
-                    ],
-                    'animalrescuer'=>[
-                        'status'=>true,
-                        'animalrescuer_id'=>$userModel->animalrescuersandshelters->id,
-                    ]
-                ];
+                if(!empty($userModel->animalrescuersandshelters->forumspecialuser)){
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>false,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>true,
+                            'animalrescuer_id'=>$userModel->animalrescuersandshelters->id,
+
+                        ],
+                        'forumspecialuser'=>[
+                                'status'=>true,
+                                'forumspecialuser_id'=>$userModel->animalrescuersandshelters->forumspecialuser->id,
+                        ]
+                    ];
+                }else{
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>false,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>true,
+                            'animalrescuer_id'=>$userModel->animalrescuersandshelters->id,
+
+                        ],
+                        'forumspecialuser'=>[
+                            'status'=>false,
+                        ]
+                    ];
+                }
+
             }else{
                 $user=[
                     'user'=>Auth::id(),
@@ -73,7 +126,10 @@ class LoginRegisterController extends Controller
                     ],
                     'animalrescuer'=>[
                         'status'=>false,
-                    ]
+                    ],
+                    'forumspecialuser'=>[
+                        'status'=>false,
+                    ],
                 ];
             }
             Session::put('user',$user);
@@ -120,6 +176,97 @@ class LoginRegisterController extends Controller
         }else{
             return "error";
         }
+        $userModel=PetOwner::where('id', '=',Auth::id())->first();
+            if(!empty($userModel->admin)){
+                $user=[
+                    'user'=>Auth::id(),
+                    'admin'=>[
+                        'status'=>true,
+                        'admin_id'=>$userModel->admin->id,
+                    ],
+                    'animalrescuer'=>[
+                        'status'=>false,
+                    ]
+                ];
+                if(!empty($userModel->admin->forumspecialuser)){
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>true,
+                            'admin_id'=>$userModel->admin->id,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>false,
+                        ],
+                        'forumspecialuser'=>[
+                            'status'=>true,
+                            'forumspecialuser_id'=>$userModel->admin->forumspecialuser->id,
+                        ]
+                    ];
+                }else{
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>true,
+                            'admin_id'=>$userModel->admin->id,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>false,
+                        ],
+                        'forumspecialuser'=>[
+                            'status'=>false,
+                        ]
+                    ];
+                }
+            }else if(!empty($userModel->animalrescuersandshelters)){
+                if(!empty($userModel->animalrescuersandshelters->forumspecialuser)){
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>false,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>true,
+                            'animalrescuer_id'=>$userModel->animalrescuersandshelters->id,
+
+                        ],
+                        'forumspecialuser'=>[
+                                'status'=>true,
+                                'forumspecialuser_id'=>$userModel->animalrescuersandshelters->forumspecialuser->id,
+                        ]
+                    ];
+                }else{
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>false,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>true,
+                            'animalrescuer_id'=>$userModel->animalrescuersandshelters->id,
+
+                        ],
+                        'forumspecialuser'=>[
+                            'status'=>false,
+                        ]
+                    ];
+                }
+
+            }else{
+                $user=[
+                    'user'=>Auth::id(),
+                    'admin'=>[
+                        'status'=>false,
+                    ],
+                    'animalrescuer'=>[
+                        'status'=>false,
+                    ],
+                    'forumspecialuser'=>[
+                        'status'=>false,
+                    ],
+                ];
+            }
+            Session::put('user',$user);
         return view('signupdone');
     }
 
@@ -159,6 +306,97 @@ class LoginRegisterController extends Controller
         }else{
             return "error";
         }
+        $userModel=PetOwner::where('id', '=',Auth::id())->first();
+            if(!empty($userModel->admin)){
+                $user=[
+                    'user'=>Auth::id(),
+                    'admin'=>[
+                        'status'=>true,
+                        'admin_id'=>$userModel->admin->id,
+                    ],
+                    'animalrescuer'=>[
+                        'status'=>false,
+                    ]
+                ];
+                if(!empty($userModel->admin->forumspecialuser)){
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>true,
+                            'admin_id'=>$userModel->admin->id,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>false,
+                        ],
+                        'forumspecialuser'=>[
+                            'status'=>true,
+                            'forumspecialuser_id'=>$userModel->admin->forumspecialuser->id,
+                        ]
+                    ];
+                }else{
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>true,
+                            'admin_id'=>$userModel->admin->id,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>false,
+                        ],
+                        'forumspecialuser'=>[
+                            'status'=>false,
+                        ]
+                    ];
+                }
+            }else if(!empty($userModel->animalrescuersandshelters)){
+                if(!empty($userModel->animalrescuersandshelters->forumspecialuser)){
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>false,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>true,
+                            'animalrescuer_id'=>$userModel->animalrescuersandshelters->id,
+
+                        ],
+                        'forumspecialuser'=>[
+                                'status'=>true,
+                                'forumspecialuser_id'=>$userModel->animalrescuersandshelters->forumspecialuser->id,
+                        ]
+                    ];
+                }else{
+                    $user=[
+                        'user'=>Auth::id(),
+                        'admin'=>[
+                            'status'=>false,
+                        ],
+                        'animalrescuer'=>[
+                            'status'=>true,
+                            'animalrescuer_id'=>$userModel->animalrescuersandshelters->id,
+
+                        ],
+                        'forumspecialuser'=>[
+                            'status'=>false,
+                        ]
+                    ];
+                }
+
+            }else{
+                $user=[
+                    'user'=>Auth::id(),
+                    'admin'=>[
+                        'status'=>false,
+                    ],
+                    'animalrescuer'=>[
+                        'status'=>false,
+                    ],
+                    'forumspecialuser'=>[
+                        'status'=>false,
+                    ],
+                ];
+            }
+            Session::put('user',$user);
         return view('signupanimalrescuedone');
     }
 }

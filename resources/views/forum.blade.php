@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#">
+            <a href="{{route('forumFeedback.index')}}">
                 <div class="box">
                     <div class="details">
                     <h3>Feedback and Suggestions</h3>

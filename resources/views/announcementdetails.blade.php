@@ -13,16 +13,20 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{{route('forum.index')}}">Forum</a></li>
-              <li class="breadcrumb-item"><a href="{{ route('forumCategory.index', ['categoryId' => $category->id]) }}">{{$category->name}}</a></li>
+              <li class="breadcrumb-item"><a href="{{route('forumLostnFound.index')}}">Lost and Found Announcement</a></li>
               <li class="breadcrumb-item active" aria-current="page">...</li>
             </ol>
           </nav>
         </div>
         <div class="container m-5 pt-4" style="background-color: white">
             <div class="container py-2">
-                <h4>{{$forumPost->title}}</h4>
-                <p>{{$forumPost->petowner->username}} | {{Carbon::parse($forumPost->datetime)->format('d-m-Y')}}</p>
-                <p>{{$forumPost->description}}</p>
+                <h4>{{$announcement->title}}</h4>
+                <p>@if (!empty($announcement->forumspecialuser->animalrescuersandshelters_id))
+                    {{$announcement->forumspecialuser->animalrescuersandshelters->petowner->username}}
+                    @else
+                    {{$announcement->forumspecialuser->admin->petowner->username}}
+                @endif | {{Carbon::parse($announcement->datetime)->format('d-m-Y')}}</p>
+                <p>{{$announcement->description}}</p>
 
             </div>
         </div>
@@ -32,7 +36,7 @@
             @else
 
         @endif --}}
-        @foreach ($forumPost->comment as $comment)
+        @foreach ($announcement->comment as $comment)
         <div class="container m-5 pt-4" style="background-color: white">
             <div class="p-3">
                 <h6>{{$comment->petowner->username}}</h6>
@@ -66,10 +70,11 @@
             </div>
         </div> --}}
         @if($user!=false)
-        <form method="POST" class="container m-5 pt-4" action="{{route('forumCategoryComment.add')}}" style="background-color: white">
+        <form method="POST" class="container m-5 pt-4" action="{{route('forumAnnouncementAdd.add')}}" style="background-color: white">
            @csrf
-           <input type='number' name='forumId' value='{{$forumPost->id}}' hidden>
+           <input type='number' name='announcementId' value='{{$announcement->id}}' hidden>
             <div>
+                @csrf
                 <label for="forumComment" class="form-label">Leave a Comment</label>
                 <textarea class="form-control" id="forumComment" rows="3" name='content' placeholder="Comment..."></textarea>
                 <input type="submit" class="btn btn-warning my-3" value="Submit">

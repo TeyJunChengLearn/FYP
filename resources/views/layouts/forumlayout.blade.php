@@ -29,7 +29,10 @@
 			<ul id ="navbar">
 				<li><a href="{{route('forum.index')}}">Forum</a></li>
 				<li><a href="adopt.html">Adopt/Marketplace</a></li>
-				<li><a href="login.html">User</a></li> <!--changes between User and username-->
+                @if(Auth::user())
+                <li><a href="#">{{Auth::user()->username}}</a></li>
+                @endif
+				{{-- <li><a href="login.html">User</a></li> <!--changes between User and username--> --}}
 			</ul>
 		</div>
 	</section>

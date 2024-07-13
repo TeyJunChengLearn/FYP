@@ -12,10 +12,10 @@
 @section('content')
     <main>
       <div class="container m-5">
-        <div class="container"><h3><b>{{$category->name}}</b></h3>
+        <div class="container"><h3><b>{{$category->name}}</b></h3></div>
             @if($user!=null)
                 <button id="toggleFormBtn" class="btn btn-warning">Add Post</button>
-                </div>
+
                 <form id="announcementForm" method="POST" action='{{ route('forumCategory.add', ['categoryId' => $category->id]) }}' class="container m-5 p-4" style="background-color: white; display: none">
                     @csrf
                     <div>

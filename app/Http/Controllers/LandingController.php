@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\AnimalRescuerAndShelter;
+use Illuminate\Support\Facades\Session;
 use PhpParser\NodeVisitor\FirstFindingVisitor;
 
 class LandingController extends Controller
@@ -16,6 +17,7 @@ class LandingController extends Controller
     public function index(request $request){
         // $data=AnimalRescuerAndShelter::find(1)->forumpost;
         // dd($data);
+        // dd(Session::get('user'));
         return view('landing');
     }
 }

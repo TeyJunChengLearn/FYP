@@ -31,7 +31,7 @@
                             <input type="text" class="form-control" placeholder="Username" name='username' required>
                           </div>
                           <div class="col">
-                            <select id="gender" class="form-control" name='gender'>
+                            <select id="gender" class="form-control" name='gender' required>
                                 <option selected disabled>Gender</option>
                                 <option>Male</option>
                                 <option>Female</option>
