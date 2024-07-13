@@ -1,8 +1,4 @@
-.container {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 30px;
-  }
+
   .title {
     margin-bottom: 20px;
   }
@@ -18,6 +14,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
     box-sizing: border-box;
+    background-color: white;
   }
 
   .pet-img {
