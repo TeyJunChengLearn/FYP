@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\PetOwner;
 use App\Models\ForumCategory;
 use Illuminate\Console\Command;
+use App\Models\ForumSpeacialUser;
 use Illuminate\Support\Facades\Hash;
 use App\Models\AnimalRescuerAndShelter;
 
@@ -51,15 +52,8 @@ class DefaultDatabase extends Command
         Admin::create([
             'petowner_id'=>1
         ]);
-        AnimalRescuerAndShelter::create([
-            'name'=>'cheng cheng',
-            'structure'=>1,
-            'location'=>'cyberjaya',
-            'phonenumber'=>'0172935594',
-            'taxidentificationnumber'=>'012345',
-            'businesslicense'=>'012345',
-            'description'=>"this is from cheng cheng",
-            'petowner_id'=>2,
+        ForumSpeacialUser::create([
+            'admin_id'=>1,
         ]);
         ForumCategory::create([
             'name'=>'Dog',
