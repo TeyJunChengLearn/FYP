@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/css/test.css">
   <link rel="stylesheet" href="/css/admindashboard.css">
   <link rel="icon" href="kiwi-icon.png">
-
+  @yield('css')
   <title>AllPets | Where Every Pet Finds A Home</title>
 </head>
 

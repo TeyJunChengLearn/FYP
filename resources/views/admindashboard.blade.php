@@ -1,4 +1,7 @@
 @extends('layouts.admindashboardnavbar')
+@section('css')
+
+@endsection
 @section('content')
         <div class="w-100">
             <div class="py-3 px-5">
