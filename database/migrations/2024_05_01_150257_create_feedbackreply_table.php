@@ -17,8 +17,8 @@ return new class extends Migration
             $table->datetime('datetime');
             $table->unsignedBigInteger('feedback_id');
             $table->unsignedBigInteger('admin_id');
-            $table->foreign('feedback_id')->references('id')->on('feedback');
-            $table->foreign('admin_id')->references('id')->on('admin');
+            $table->foreign('feedback_id')->references('id')->on('feedback')->onDelete('cascade');
+            $table->foreign('admin_id')->references('id')->on('admin')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('admin_id')->nullable();
             $table->unsignedBigInteger('animalrescuersandshelters_id')->nullable();
-            $table->foreign('admin_id')->references('id')->on('admin');
-            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters');
+            $table->foreign('admin_id')->references('id')->on('admin')->onDelete('cascade');
+            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters')->onDelete('cascade');
             $table->timestamps();
         });
     }

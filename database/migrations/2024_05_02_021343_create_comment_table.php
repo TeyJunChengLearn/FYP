@@ -20,11 +20,11 @@ return new class extends Migration
             $table->unsignedBigInteger('forumpost_id')->nullable();
             $table->unsignedBigInteger('petowner_id')->nullable();
             $table->unsignedBigInteger('animalrescuersandshelters_id')->nullable();
-            $table->foreign('lostandfoundannouncement_id')->references('id')->on('lostandfoundannouncement');
-            $table->foreign('announcement_id')->references('id')->on('announcement');
-            $table->foreign('forumpost_id')->references('id')->on('forumpost');
-            $table->foreign('petowner_id')->references('id')->on('petowner');
-            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters');
+            $table->foreign('lostandfoundannouncement_id')->references('id')->on('lostandfoundannouncement')->onDelete('cascade');
+            $table->foreign('announcement_id')->references('id')->on('announcement')->onDelete('cascade');
+            $table->foreign('forumpost_id')->references('id')->on('forumpost')->onDelete('cascade');
+            $table->foreign('petowner_id')->references('id')->on('petowner')->onDelete('cascade');
+            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters')->onDelete('cascade');
             $table->timestamps();
         });
     }

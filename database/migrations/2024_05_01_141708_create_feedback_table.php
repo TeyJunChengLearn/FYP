@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('star');
             $table->datetime('datetime');
             $table->unsignedBigInteger('petowner_id');
-            $table->foreign('petowner_id')->references('id')->on('petowner');
+            $table->foreign('petowner_id')->references('id')->on('petowner')->onDelete('cascade');
             $table->timestamps();
         });
     }

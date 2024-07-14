@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('animalrescuersandshelters_id')->unique();
             $table->boolean('approval')->default(false);
             $table->boolean('confirm')->default(false);
-            $table->foreign('admin_id')->references('id')->on('admin');
-            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters');
+            $table->foreign('admin_id')->references('id')->on('admin')->onDelete('cascade');
+            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters')->onDelete('cascade');
             $table->timestamps();
         });
     }

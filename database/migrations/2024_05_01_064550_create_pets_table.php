@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('birthdate');
             $table->string('image')->nullable();
             $table->unsignedBigInteger('petowner_id');
-            $table->foreign('petowner_id')->references('id')->on('petowner');
+            $table->foreign('petowner_id')->references('id')->on('petowner')->onDelete('cascade');
             $table->timestamps();
         });
     }

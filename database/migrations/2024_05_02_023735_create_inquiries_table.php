@@ -18,8 +18,8 @@ return new class extends Migration
             $table->datetime('datetime');
             $table->unsignedBigInteger('forumspecialuser_id');
             $table->unsignedBigInteger('petowner_id');
-            $table->foreign('forumspecialuser_id')->references('id')->on('forumspecialuser');
-            $table->foreign('petowner_id')->references('id')->on('petowner');
+            $table->foreign('forumspecialuser_id')->references('id')->on('forumspecialuser')->onDelete('cascade');
+            $table->foreign('petowner_id')->references('id')->on('petowner')->onDelete('cascade');
             $table->timestamps();
         });
     }

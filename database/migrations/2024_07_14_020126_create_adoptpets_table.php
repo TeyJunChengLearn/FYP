@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('description',3000)->nullable();
             $table->unsignedBigInteger('animalrescuersandshelters_id');
-            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters');
+            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters')->onDelete('cascade');
             $table->timestamps();
         });
     }

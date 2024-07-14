@@ -19,10 +19,10 @@ return new class extends Migration
             $table->unsignedBigInteger('petowner_id')->nullable();
             $table->unsignedBigInteger('animalrescuersandshelters_id')->nullable();
             $table->unsignedBigInteger('reply_id')->nullable();
-            $table->foreign('comment_id')->references('id')->on('comment');
-            $table->foreign('petowner_id')->references('id')->on('petowner');
-            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters');
-            $table->foreign('reply_id')->references('id')->on('reply');
+            $table->foreign('comment_id')->references('id')->on('comment')->onDelete('cascade');
+            $table->foreign('petowner_id')->references('id')->on('petowner')->onDelete('cascade');
+            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters')->onDelete('cascade');
+            $table->foreign('reply_id')->references('id')->on('reply')->onDelete('cascade');
             $table->timestamps();
         });
     }

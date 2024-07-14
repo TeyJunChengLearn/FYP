@@ -23,8 +23,8 @@ return new class extends Migration
             $table->boolean('confirm')->default(false);
             $table->unsignedBigInteger('animalrescuersandshelters_id');
             $table->unsignedBigInteger('petowner_id');
-            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters');
-            $table->foreign('petowner_id')->references('id')->on('petowner');
+            $table->foreign('animalrescuersandshelters_id')->references('id')->on('animalrescuersandshelters')->onDelete('cascade');
+            $table->foreign('petowner_id')->references('id')->on('petowner')->onDelete('cascade');
             $table->timestamps();
         });
     }

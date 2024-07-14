@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('petowner_id');
             $table->unsignedBigInteger('feedback_id');
-            $table->foreign('petowner_id')->references('id')->on('petowner');
-            $table->foreign('feedback_id')->references('id')->on('feedback');
+            $table->foreign('petowner_id')->references('id')->on('petowner')->onDelete('cascade');
+            $table->foreign('feedback_id')->references('id')->on('feedback')->onDelete('cascade');
             $table->timestamps();
         });
     }

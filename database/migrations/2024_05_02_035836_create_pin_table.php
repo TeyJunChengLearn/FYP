@@ -16,9 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('forumspecialuser_id');
             $table->unsignedBigInteger('lostandfoundannouncement_id')->nullable()->unique();
             $table->unsignedBigInteger('announcement_id')->nullable()->unique();
-            $table->foreign('forumspecialuser_id')->references('id')->on('forumspecialuser');
-            $table->foreign('lostandfoundannouncement_id')->references('id')->on('lostandfoundannouncement');
-            $table->foreign('announcement_id')->references('id')->on('announcement');
+            $table->foreign('forumspecialuser_id')->references('id')->on('forumspecialuser')->onDelete('cascade');
+            $table->foreign('lostandfoundannouncement_id')->references('id')->on('lostandfoundannouncement')->onDelete('cascade');
+            $table->foreign('announcement_id')->references('id')->on('announcement')->onDelete('cascade');
             $table->timestamps();
         });
     }

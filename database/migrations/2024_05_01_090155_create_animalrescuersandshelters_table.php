@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('businesslicense');
             $table->string('description',100);
             $table->unsignedBigInteger('petowner_id');
-            $table->foreign('petowner_id')->references('id')->on('petowner');
+            $table->foreign('petowner_id')->references('id')->on('petowner')->onDelete('cascade');
             $table->timestamps();
         });
     }

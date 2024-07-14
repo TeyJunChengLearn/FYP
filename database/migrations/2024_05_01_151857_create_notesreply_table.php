@@ -18,9 +18,9 @@ return new class extends Migration
             $table->unsignedBigInteger('notes_id')->nullable();
             $table->unsignedBigInteger('admin_id');
             $table->unsignedBigInteger('notesreply_id')->nullable();
-            $table->foreign('notes_id')->references('id')->on('notes');
-            $table->foreign('admin_id')->references('id')->on('admin');
-            $table->foreign('notesreply_id')->references('id')->on('notesreply');
+            $table->foreign('notes_id')->references('id')->on('notes')->onDelete('cascade');
+            $table->foreign('admin_id')->references('id')->on('admin')->onDelete('cascade');
+            $table->foreign('notesreply_id')->references('id')->on('notesreply')->onDelete('cascade');
             $table->timestamps();
         });
     }
