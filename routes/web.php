@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\AdoptController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\NearbyController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\DesignTestController;
 use App\Http\Controllers\NotificationController;
@@ -77,3 +79,11 @@ Route::get('/designtest',[DesignTestController::class,'index']);
 Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
 
 Route::get('/notifications/{id}', [NotificationController::class, 'show'])->name('notifications.show');
+
+Route::get('/nearby',[NearbyController::class, 'index'])->name('nearby.index');
+
+Route::get('/adopt',[AdoptController::class, 'index'])->name('adopt.index');
+
+Route::post('/adopt/add',[AdoptController::class, 'adoptedPetAdd'])->name('adopt.add');
+
+Route::get('/adopt/pet/{adoptPetId}',[AdoptController::class, 'petIndex'])->name('adoptPet.index');

@@ -25,9 +25,9 @@
 		<a href="/" class="logo"><img src="/img/header-logo.png" alt=""/></a>
 		<div>
 			<ul id ="navbar">
-                <li><a href="adopt.html">Nearby</a></li>
+                <li><a href="{{route('nearby.index')}}">Nearby</a></li>
 				<li><a href="{{route('forum.index')}}">Forum</a></li>
-				<li><a href="adopt.html">Adopt/Marketplace</a></li>
+				<li><a href="{{route('adopt.index')}}">Adopt/Marketplace</a></li>
 
                 @if(Auth::user())
                     <li><a href="{{route('notifications.index')}}">notification</a></li>
@@ -63,19 +63,19 @@
 
 		<div class="col">
 			<h4>Forum</h4>
-			<a href="about.html">Forum List</a>
-			<a href="about.html">Lost and Found Announcement</a>
+			<a href="{{route('forum.index')}}">Forum List</a>
+			<a href="{{route('forumLostnFound.index')}}">Lost and Found Announcement</a>
 		</div>
 
 		<div class="col">
 			<h4>Adopt / Marketplace</h4>
-			<a href="#">Adopt</a>
+			<a href="{{route('adopt.index')}}">Adopt</a>
 			<a href="#">Marketplace</a>
 		</div>
 
         <div class="col">
 			<h4>Vetinary Assistance</h4>
-			<a href="#">Recommended / Nearby Hospitals</a>
+			<a href="{{route('nearby.index')}}">Recommended / Nearby Hospitals</a>
 		</div>
 
 

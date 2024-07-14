@@ -37,18 +37,6 @@ class DefaultDatabase extends Command
             'email'=>'elson2002@gmail.com',
             'password'=>Hash::make('Teyjuncheng1212'),
         ]);
-        PetOwner::create([
-            'firstname'=>'Tey',
-            'lastname'=>'Jun Cheng',
-            'email'=>'junelson2002@gmail.com',
-            'password'=>Hash::make('Teyjuncheng1212'),
-        ]);
-        PetOwner::create([
-            'firstname'=>'Tey',
-            'lastname'=>'Jun Cheng',
-            'email'=>'cheng2002@gmail.com',
-            'password'=>Hash::make('Teyjuncheng1212'),
-        ]);
         Admin::create([
             'petowner_id'=>1
         ]);
@@ -83,5 +71,6 @@ class DefaultDatabase extends Command
             'name'=>'Insects',
             'admin_id'=>1
         ]);
+        $this->call('app:store-all-location-from-json-file');
     }
 }

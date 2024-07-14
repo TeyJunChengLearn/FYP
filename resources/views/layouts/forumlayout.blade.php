@@ -27,9 +27,9 @@
     </div>
 		<div>
 			<ul id ="navbar">
-                <li><a href="adopt.html">Nearby</a></li>
+                <li><a href="{{route('nearby.index')}}">Nearby</a></li>
 				<li><a href="{{route('forum.index')}}">Forum</a></li>
-				<li><a href="adopt.html">Adopt/Marketplace</a></li>
+				<li><a href="{{route('adopt.index')}}">Adopt/Marketplace</a></li>
                 @if(Auth::user())
                 <li><a href="{{route('notifications.index')}}">notification</a></li>
                 <li><a href="#">{{Auth::user()->username}}</a></li>

@@ -1,3 +1,6 @@
+@php
+    use Carbon\Carbon;
+@endphp
 @extends('layouts.forumlayout')
 @section('css')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -9,57 +12,72 @@
         <div class="container mt-5 pet-name"><h3 class="ms-4"><b>Oyen</b></h3></div>
         <div class="container mt-4 d-flex flex-row">
             <div class="col image-container" style="display: flex; justify-content: center; align-items: center; height: 380px;">
-                <img src="/img/huhcat.jpg" alt="" style="max-height: 380px; min-height:380px">
+                <img src="{{$adoptPet->image}}" alt="" style="max-height: 380px; min-height:380px">
             </div>
             <div class="col table-container" style="background-color: #FFF8F2;">
                 <table class="table table-borderless align-middle">
                     <tbody>
                         <tr>
                             <td><b>Breed</b></td>
-                            <td>Domestic Short Hair</td>
+                            <td>{{$adoptPet->petbreed}}</td>
                         </tr>
                         <tr>
                             <td><b>Gender</b></td>
+                            {{-- <td>Male</td> --}}
+                            @if($adoptPet->gender == 0)
                             <td>Male</td>
+                                @else
+                            <td>Female</td>
+                            @endif
                         </tr>
                         <tr>
                             <td><b>Age</b></td>
-                            <td>3 years</td>
+                            <td>{{$adoptPet->age}}</td>
                         </tr>
                         <tr>
                             <td><b>Vaccinated</b></td>
-                            <td>Yes</td>
+                            {{-- <td>Yes</td> --}}
+                            @if($adoptPet->vacinated == 0)
+                            <td>yes</td>
+                                @else
+                            <td>no</td>
+                            @endif
                         </tr>
                         <tr>
                             <td><b>Condition</b></td>
-                            <td>Healthy</td>
+                            <td>{{$adoptPet->condition}}</td>
                         </tr>
                         <tr>
                             <td><b>Location</b></td>
-                            <td>Cyberjaya, Selangor</td>
+                            <td>{{$adoptPet->location}}</td>
                         </tr>
                         <tr>
                             <td><b>Date Posted</b></td>
-                            <td>20/7/2024</td>
+                            <td>{{Carbon::parse($adoptPet->created_at)->format('d-m-Y')}}</td>
                         </tr>
                         <tr>
                             <td><b>Owner</b></td>
-                            <td>PetFunds</td>
+                            <td>{{$adoptPet->animalrescuersandshelters->petowner->username}}</td>
                         </tr>
                         <tr>
                             <td><b>Contact</b></td>
-                            <td id="contact-number">01114344909</td>
+                            <td id="contact-number">{{$adoptPet->phonenumber}}</td>
                         </tr>
                         <tr>
                             <td><b>Adoption Fee</b></td>
-                            <td>Free</td>
+                            {{-- <td>Free</td> --}}
+                            @if ($adoptPet->adoptionfee==0)
+                                    <td>Free</td>
+                                @else
+                                    <td>{{$adoptPet->adoptionfee}}</td>
+                            @endif
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
        <div class="container desc">
-        <p>This is a cat this is the cat big fat cat</p>
+        <p>{{$adoptPet->description}}</p>
        </div>
     </div>
     </main>

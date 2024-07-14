@@ -68,6 +68,14 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"></script>
 
 <!-- Trigger the Modal -->
-
+<script>
+    document.getElementById('signup-Form').addEventListener('submit', function(event) {
+        var vaccinatedSelect = document.getElementById('gender');
+        if (vaccinatedSelect.value === 'Gender') {
+            event.preventDefault();
+            alert('Please select a valid Gender.');
+        }
+    });
+</script>
 </body>
 </html>

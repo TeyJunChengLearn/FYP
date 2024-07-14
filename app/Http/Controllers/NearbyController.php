@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Location;
 use Illuminate\Http\Request;
 
-class DesignTestController extends Controller
+class NearbyController extends Controller
 {
     public function index(){
         $locations=Location::all();
-        return view('adoptplace',compact('locations'));
+        return view('map',compact('locations'));
     }
 }
