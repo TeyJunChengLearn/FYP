@@ -34,7 +34,7 @@ class AdoptController extends Controller
             'adoptionfee'=>$request->adoptionfee,
             'image'=>Storage::url($path),
             'description'=>$request->description,
-            'animalrescuersandshelters_id'=>Session::get('user')['forumspecialuser']['forumspecialuser_id'],
+            'animalrescuersandshelters_id'=>Session::get('user')['animalrescuer']['animalrescuer_id'],
         ]);
         return redirect()->back();
     }

@@ -7,6 +7,7 @@ use App\Models\PetOwner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\AnimalRescuersApproval;
 use App\Models\AnimalRescuerAndShelter;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
@@ -400,6 +401,9 @@ class LoginRegisterController extends Controller
                 ];
             }
             Session::put('user',$user);
+            AnimalRescuersApproval::create([
+                'animalrescuersandshelters_id'=>$userModel->animalrescuersandshelters->id,
+            ]);
         return view('signupanimalrescuedone');
     }
 }
