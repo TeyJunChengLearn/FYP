@@ -31,7 +31,7 @@
 				<li><a href="{{route('forum.index')}}">Forum</a></li>
 				<li><a href="{{route('adopt.index')}}">Adopt/Marketplace</a></li>
                 @if(Auth::user())
-                <li><a href="{{route('notifications.index')}}">notification</a></li>
+                <li ><a id='notification' href="{{route('notifications.index')}}">notification</a></li>
                 <li><a href="#">{{Auth::user()->username}}</a></li>
                 @endif
 				{{-- <li><a href="login.html">User</a></li> <!--changes between User and username--> --}}
@@ -41,4 +41,48 @@
     @yield('content')
 
 </body>
+<script>
+    @if (Auth::user())
+
+
+    function updatenotification(){
+        var url = '{{route('notification.api')}}';
+        const payload = {
+        id: {{ Auth::user()->id}},
+        };
+
+        // Configure the fetch options
+        const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+        };
+        fetch(url, options)
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            var notificationItem = document.getElementById('notification');
+            console.log(data);
+                if(data.number == 0){
+                    notificationItem.innerHTML ='notification';
+                }else{
+                    notificationItem.innerHTML ='notification('+data.number+')';
+                }
+            }
+        )
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+
+    }
+    updatenotification();
+    setInterval(updatenotification, 5000);
+    @endif
+</script>
 </html>

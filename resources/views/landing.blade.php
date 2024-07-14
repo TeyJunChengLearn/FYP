@@ -30,7 +30,7 @@
 				<li><a href="{{route('adopt.index')}}">Adopt/Marketplace</a></li>
 
                 @if(Auth::user())
-                    <li><a href="{{route('notifications.index')}}">notification</a></li>
+                    <li><a id='notification' href="{{route('notifications.index')}}">notification</a></li>
                     <li><a href="{{route('loginRegister.logout')}}">Logout</a></li>
                     @else
                     <li><a href="{{route('loginRegister.index')}}">Login/Register</a></li>
@@ -129,6 +129,49 @@
 	</footer>
 		    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
+            <script>
+                @if (Auth::user())
 
+
+                function updatenotification(){
+                    var url = '{{route('notification.api')}}';
+                    const payload = {
+                    id: {{ Auth::user()->id}},
+                    };
+
+                    // Configure the fetch options
+                    const options = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                    };
+                    fetch(url, options)
+                    .then(response => {
+                        if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        var notificationItem = document.getElementById('notification');
+                        console.log(data);
+                            if(data.number == 0){
+                                notificationItem.innerHTML ='notification';
+                            }else{
+                                notificationItem.innerHTML ='notification('+data.number+')';
+                            }
+                        }
+                    )
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+
+                }
+                updatenotification();
+                setInterval(updatenotification, 5000);
+                @endif
+            </script>
     </body>
     </html>
