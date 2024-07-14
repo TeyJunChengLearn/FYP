@@ -8,6 +8,12 @@
   <link rel="stylesheet" href="/css/adoptplace.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/pagination.css">
+  <style>
+a {
+    text-decoration: none;
+    color: inherit; /* Optional: to make sure the link inherits the color of the surrounding text */
+}
+  </style>
 @endsection
 @section('content')
 <body style="background-color: #fff8f2">
@@ -25,18 +31,6 @@
                       <div class="col">
                         <input type="text" class="form-control" placeholder="Pet Name" name="name" required>
                       </div>
-                      <div class="col">
-                        <select name='pettype' class="form-control" id='typeSelect' required>
-                            <option selected disabled>Pet Type</option>
-                            <option value='0'>Cat</option>
-                            <option value='1'>Dog</option>
-                        </select>
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" name='petbreed' placeholder="Pet Breed" required>
-                      </div>
-                    </div>
-                    <div class="row my-2">
                         <div class="col">
                             <select name='gender' class="form-control" id='genderSelect' required>
                                 <option selected disabled>Pet Gender</option>
@@ -46,52 +40,71 @@
                         </div>
                         <div class="col">
                             <input type="text" name='age' class="form-control" placeholder="Pet Age" required>
-                          </div>
-                          <div class="col">
+                        </div>
+                    </div>
+
+                    <div class="row my-2">
+                        <div class="col">
+                            <select name='pettype' class="form-control" id='typeSelect' required>
+                                <option selected disabled>Pet Type</option>
+                                <option value='0'>Cat</option>
+                                <option value='1'>Dog</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name='petbreed' placeholder="Pet Breed" required>
+                        </div>
+                        <div class="col">
+                            <input type="text" name='condition' class="form-control" placeholder="Condition" required>
+                        </div>
+                    </div>
+
+                    <div class="row my-2">
+                        <div class="col">
                             <select name='vacinated' class="form-control" id='vaccinatedSelect' required>
                                 <option selected disabled >Vaccinated</option>
                                 <option value='0'>Yes</option>
                                 <option value='1'>No</option>
                             </select>
                         </div>
-                          <div class="col">
-                            <input type="text" name='condition' class="form-control" placeholder="Condition" required>
-                          </div>
-                    </div>
-                    <div class="row my-2">
                         <div class="col">
-                            <input type="text" name="location" class="form-control" placeholder="Address" required>
+                            <input type="number" class="form-control" name='adoptionfee' placeholder="Adoption Fee" required>
                         </div>
                         <div class="col">
                             <input type="text" name='phonenumber' class="form-control" placeholder="Contact Number" oninput="validatePhoneNumber(this)" required>
                         </div>
-                        <div class="col">
-                            <input type="number" class="form-control" name='adoptionfee' placeholder="Adoption Fee" required>
-                        </div>
                     </div>
+
                     <div class="row my-2">
                         <div class="col">
                             <input type="file" class="form-control" name='image' accept=".jpg, .jpeg, .png, .gif, .svg, .webp" placeholder="Add Pet Image(s)" required multiple>
                         </div>
                     </div>
+
+                    <div class="row my-2">
+                        <div class="col">
+                            <input type="text" name="location" class="form-control" placeholder="Address" required>
+                        </div>
+                    </div>
+
                     <div class="row my-2">
                         <div class="col">
                             <textarea class="form-control" name='description' placeholder="Pet Description..."></textarea>
                         </div>
                     </div>
+
                     <input type="submit" class="btn btn-warning my-3" value="Submit">
 
                   </form>
      @endif
-      <div class="pet-list mt-5">
+      <div class="container m-5 pet-list">
         @if(!$adoptPets->isEmpty())
                 @foreach($adoptPets as $adoptPet)
                 <a href="{{route('adoptPet.index',['adoptPetId'=>$adoptPet->id])}}">
                 <div class="pet-container">
                     <div class="pet-image"><img class="pet-img" src="{{$adoptPet->image}}" alt="Fluffy"></div>
                     <div class="pet-details">
-                      <h3>{{$adoptPet->name}}</h3>
-                      <p>For Sale</p>
+                      <h2>{{$adoptPet->name}}</h2>
                       <p>{{$adoptPet->age}},@if($adoptPet->gender==0)Male @else Female @endif</p>
                       <p>{{$adoptPet->petbreed}}</p>
                       <p>{{$adoptPet->animalrescuersandshelters->petowner->username}} | {{Carbon::parse($adoptPet->created_at)->format('d-m-Y')}}</p>
@@ -100,7 +113,7 @@
                 </a>
                 @endforeach
             @else
-            <p>There are no any adopt pet</p>
+            <p>There are no pets available for adoption as of now.</p>
         @endif
         {{-- <div class="pet-container">
           <div class="pet-image"><img class="pet-img" src="/img/huhcat.jpg" alt="Fluffy"></div>

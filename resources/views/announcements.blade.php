@@ -45,7 +45,7 @@
                 <hr>
                 @endforeach
                 @else
-                <p>there are no announcement</p>
+                <p>There are no announcements.</p>
             @endif
             {{-- <a href="#">
                 <div class="container d-flex">
