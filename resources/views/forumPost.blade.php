@@ -45,7 +45,7 @@
                 @endforeach
 
             @else
-                <p>There are no any relation Post</p>
+                <p>There are no posts.</p>
             @endif
             {{-- <a href="#">
                 <div class="container d-flex">

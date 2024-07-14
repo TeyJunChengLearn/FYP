@@ -15,7 +15,22 @@
 
   <title>AllPets | Where Every Pet Finds A Home</title>
   <style>
+    .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
 
+        .section-1 {
+            background: url('/img/landing-2.png') no-repeat center center/cover;
+        }
+
+        .section-2 {
+            background: url('/img/landing-3.png') no-repeat center center/cover;
+        }
   </style>
 </head>
 
@@ -56,6 +71,8 @@
 			<a href="{{ route('loginRegister.index') }}" class="btn btn-warning">Get Started</a>
 		</div>
 	</section>
+    <section class="section section-1"></section>
+    <section class="section section-2"></section>
 
   </main>
 
@@ -79,50 +96,6 @@
 		</div>
 
 
-
-		<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true" style="    --bs-modal-width: 700px;">
-			<div class="modal-dialog" >
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<div class="progress" style="min-width: 100%; height: 34px; font-size: large;">
-						<div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 50%; color:black;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Step 1</div>
-					  </div>
-					  <div class="container">
-						<div class="form-container" style="width:600px">
-							<div class="title">Sign Up New Account</div>
-							<form>
-								<div class="row">
-								  <div class="col">
-									<input type="text" class="form-control" placeholder="First Name">
-								  </div>
-								  <div class="col">
-									<input type="text" class="form-control" placeholder="Last Name">
-								  </div>
-								</div>
-								<div class="row">
-									<div class="col">
-									  <input type="date" class="form-control" placeholder="Date of Birth">
-									</div>
-									<div class="col">
-									  <input type="number" class="form-control" placeholder="Phone Number">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col">
-										<textarea class="form-control" placeholder="Tell us about yourself..." rows="3"></textarea>
-									</div>
-								</div>
-							  </form>
-						</div>
-					  </div>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
 
 
 

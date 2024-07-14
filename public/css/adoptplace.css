@@ -3,32 +3,77 @@
     margin-bottom: 20px;
   }
   .pet-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create exactly two columns */
+    gap: 20px; /* Gap between items */
+    justify-content: center; /* Center the items */
+    margin: 0 auto; /* Center the grid container */
+}
+
+.pet-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .pet-container {
-    display: flex;
-    width: calc(50% - 60px); /* 50% of the width minus some space for margin */
-    margin-bottom: 20px;
+    flex-direction: row; /* Ensure the image and details are side by side */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
     box-sizing: border-box;
     background-color: white;
-  }
+    border-radius: 8px; /* Add some border radius for better look */
+    margin: 0 auto; /* Center each pet-container */
+}
 
-  .pet-img {
-    width: 100%;
-    height: auto;
-  }
-  .pet-image {
+.pet-image {
     flex: 1;
     max-width: 40%;
     margin-right: 20px;
-  }
-  .pet-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pet-img {
+    width: 250px; /* Fixed width */
+    height: 250px; /* Fixed height */
+    object-fit: cover; /* Ensure the image covers the fixed dimensions without distortion */
+    border-radius: 8px; /* Add some border radius for the image */
+}
+
+.pet-details {
     flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+}
+
+.pet-details h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.pet-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .pet-list {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .pet-container {
+        flex-direction: column; /* Stack image and details vertically on small screens */
+        width: 100%; /* Make the container full width */
+    }
+
+    .pet-image {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px; /* Add some margin below the image */
+    }
+
+    .pet-img {
+        width: 100%; /* Full width for smaller screens */
+        height: auto;
+    }
+}
+
