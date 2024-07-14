@@ -73,7 +73,10 @@ class ForumController extends Controller
             'petowner_id'=>$user['user'],
         ]);
         $postAuthor=$comment->forumpost->petowner;
-        Notification::send($postAuthor, new NewCommentNotification($comment));
+        if($comment->forumpost->petowner->id != $user['user']){
+            Notification::send($postAuthor, new NewCommentNotification($comment));
+        }
+
         return redirect()->back();
     }
 
@@ -134,24 +137,34 @@ class ForumController extends Controller
 
     public function forumLostnfoundCommentAdd(request $request){
         // dd($request->all());
-        Comment::create([
+        $user=Session::get('user');
+        $comment=Comment::create([
             'description'=>$request->content,
             'datetime'=>Carbon::now(),
             'lostandfoundannouncement_id'=>$request->lostNFoundId,
             'petowner_id'=>Session::get('user')['user'],
         ]);
+        $postAuthor=$comment->lostandfoundannouncement->petowner;
+        if($comment->lostandfoundannouncement->petowner->id != $user['user']){
+            Notification::send($postAuthor, new NewCommentNotification($comment));
+        }
         return redirect()->back();
     }
 
     public function forumAnnouncementCommentAdd(request $request){
         // dd($request->all());
+        $user=Session::get('user');
         $comment=Comment::create([
             'description'=>$request->content,
             'datetime'=>Carbon::now(),
             'announcement_id'=>$request->announcementId,
             'petowner_id'=>Session::get('user')['user'],
         ]);
-        // Notification::send($postAuthor, new NewCommentNotification($comment));
+        $postAuthor=$comment->announcement->forumspecialuser->admin->petowner;
+        if($comment->announcement->forumspecialuser->admin->petowner->id != $user['user']){
+            Notification::send($postAuthor, new NewCommentNotification($comment));
+        }
+
         return redirect()->back();
     }
 }
