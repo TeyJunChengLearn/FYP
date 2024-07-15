@@ -11,7 +11,7 @@
     <main>
       <div class="container m-5">
         <div class="container"><h3><b>Feedbacks and Suggestions</b></h3>
-        {{-- <p>Leave your feedbacks here regarding our website!</p> --}}
+        <p>Leave your feedbacks here regarding our website!</p>
         </div>
         @if ($user!=false)
             <button id="toggleFormBtn" class="btn btn-warning">Add Feedback</button>
