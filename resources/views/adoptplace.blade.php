@@ -22,6 +22,9 @@ a {
       <div class="title">
         <h2>Adopt A Pet</h2>
       </div>
+      <div class="mb-4">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search pets...">
+    </div>
       @if($user!=null && $user['animalrescuer']['status'] == true)
       <button id="toggleFormBtn" class="btn btn-warning">Add a Pet</button>
 
@@ -100,7 +103,7 @@ a {
       <div class="container m-5 pet-list">
         @if(!$adoptPets->isEmpty())
                 @foreach($adoptPets as $adoptPet)
-                <a href="{{route('adoptPet.index',['adoptPetId'=>$adoptPet->id])}}">
+                <a href="{{route('adoptPet.index',['adoptPetId'=>$adoptPet->id])}}" class="pet-item">
                 <div class="pet-container">
                     <div class="pet-image"><img class="pet-img" src="{{$adoptPet->image}}" alt="Fluffy"></div>
                     <div class="pet-details">
@@ -169,6 +172,22 @@ a {
             form.style.display = 'none';
         }
     });
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+    var filter = this.value.toUpperCase();
+    var petItems = document.getElementsByClassName('pet-item');
+
+    for (var i = 0; i < petItems.length; i++) {
+        var petDetails = petItems[i].getElementsByClassName('pet-details')[0];
+        if (petDetails) {
+            var txtValue = petDetails.textContent || petDetails.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                petItems[i].style.display = "";
+            } else {
+                petItems[i].style.display = "none";
+            }
+        }
+    }
+});
 
     // document.getElementById('feedbackForm').addEventListener('submit', function(event) {
     //     event.preventDefault(); // Prevent the default form submission

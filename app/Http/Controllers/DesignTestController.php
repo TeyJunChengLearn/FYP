@@ -9,6 +9,6 @@ class DesignTestController extends Controller
 {
     public function index(){
         $locations=Location::all();
-        return view('admindashboard',compact('locations'));
+        return view('adminuserslist',compact('locations'));
     }
 }

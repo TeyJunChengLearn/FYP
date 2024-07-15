@@ -43,9 +43,11 @@
                 <li><a href="{{route('nearby.index')}}">Nearby</a></li>
 				<li><a href="{{route('forum.index')}}">Forum</a></li>
 				<li><a href="{{route('adopt.index')}}">Adopt/Marketplace</a></li>
+                <li><a href="">Admin</a></li>
+
 
                 @if(Auth::user())
-                    <li><a id='notification' href="{{route('notifications.index')}}">notification</a></li>
+                    <li><a id='notification' href="{{route('notifications.index')}}">Notifications</a></li>
                     <li><a href="{{route('loginRegister.logout')}}">Logout</a></li>
                     @else
                     <li><a href="{{route('loginRegister.index')}}">Login/Register</a></li>
@@ -128,12 +130,12 @@
                         return response.json();
                     })
                     .then(data => {
-                        var notificationItem = document.getElementById('notification');
+                        var notificationItem = document.getElementById('Notifications');
                         console.log(data);
                             if(data.number == 0){
-                                notificationItem.innerHTML ='notification';
+                                notificationItem.innerHTML ='Notifications';
                             }else{
-                                notificationItem.innerHTML ='notification('+data.number+')';
+                                notificationItem.innerHTML ='Notifications('+data.number+')';
                             }
                         }
                     )

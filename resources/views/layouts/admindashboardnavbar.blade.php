@@ -18,9 +18,9 @@
   <title>AllPets | Where Every Pet Finds A Home</title>
 </head>
 
-<body>
+<body >
     <div class="whole d-flex">
-        <div class="flex-shrink-1 d-flex flex-column" style="background-color: #FEF8F3">
+        <div class="flex-shrink-1 d-flex flex-column" style="background-color: #fff8f2">
             <div class="p-4">
                 <a href="#" class="logo"><img src="/img/header-logo.png" alt=""/></a>
             </div>
@@ -30,16 +30,20 @@
                     <span>Dashboard</span>
                 </a>
                 <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
+                    <img src="/img/admin.png">
+                    <span>Admins</span>
+                </a>
+                <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
                     <img src="/img/group.png">
                     <span>Users</span>
                 </a>
                 <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
-                    <img src="/img/request.png">
-                    <span>Requests</span>
+                    <img src="/img/category.png">
+                    <span>Forum Categories</span>
                 </a>
                 <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
-                    <img src="/img/repeat.png">
-                    <span class="text-nowrap">Recent Activity</span>
+                    <img src="/img/request.png">
+                    <span>Requests</span>
                 </a>
             </div>
             <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
