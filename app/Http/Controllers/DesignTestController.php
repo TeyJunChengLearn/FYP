@@ -9,6 +9,6 @@ class DesignTestController extends Controller
 {
     public function index(){
         $locations=Location::all();
-        return view('adminforumcategory',compact('locations'));
+        return view('adminuserslist',compact('locations'));
     }
 }

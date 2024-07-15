@@ -22,16 +22,12 @@
         <table class="table table-hover ">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Category Name</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
             <tr>
-                <th scope="row">
-                    1
-                </th>
                 <td class="category-name">
                     <form class="edit-category-form"  method="POST">
                         @csrf

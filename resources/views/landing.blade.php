@@ -43,6 +43,8 @@
                 <li><a href="{{route('nearby.index')}}">Nearby</a></li>
 				<li><a href="{{route('forum.index')}}">Forum</a></li>
 				<li><a href="{{route('adopt.index')}}">Adopt/Marketplace</a></li>
+                <li><a href="">Admin</a></li>
+
 
                 @if(Auth::user())
                     <li><a id='notification' href="{{route('notifications.index')}}">Notifications</a></li>

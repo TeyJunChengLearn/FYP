@@ -43,7 +43,7 @@
             <hr>
             @endforeach
                 @else
-                <p>there is no lost and found announcement</p>
+                <p>There are no lost and found announcements yet.</p>
             @endif
             {{-- <a href="#">
                 <div class="container d-flex">

@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-
+    <p>We regret to inform you that your request as an animal shelter and rescue account has been denied.</p>
 </body>
 </html>

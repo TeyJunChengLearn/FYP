@@ -30,6 +30,10 @@
                     <span>Dashboard</span>
                 </a>
                 <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
+                    <img src="/img/admin.png">
+                    <span>Admins</span>
+                </a>
+                <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
                     <img src="/img/group.png">
                     <span>Users</span>
                 </a>
