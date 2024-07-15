@@ -8,10 +8,11 @@
     <button id="toggleFormBtn" class="btn btn-warning">Add New Category</button>
 
     <div class="container m-4">
-        <form id="addCategoryForm" style="display: none">
+        <form id="addCategoryForm" style="display: none" method="POST" action="{{route('admin.forumCategory.add')}}">
             <div class="form-group p-2">
+                @csrf
                 <label for="category_name">Category Name:</label>
-                <input type="text" class="form-control" id="category_name" placeholder="Enter category name">
+                <input type="text" class="form-control" id="category_name" name='name' placeholder="Enter category name">
                 <button type="submit" class="btn btn-warning mt-2">Submit</button>
             </div>
         </form>
@@ -27,10 +28,30 @@
                 </tr>
             </thead>
             <tbody>
-            <tr>
+                @if (!($forumCategories->isEmpty()))
+                    @foreach ($forumCategories as $forumCategory)
+                    <tr>
+                        <td class="category-name">
+                            <form class="edit-category-form"  method="POST" action={{route('admin.forumCategory.edit')}}>
+                                @csrf
+                                <input type='number' name='id' value='{{$forumCategory->id}}' hidden>
+                                <span class="category-text">{{$forumCategory->name}}</span>
+                                <input type="text" name="category_name" class="form-control d-none" value="{{$forumCategory->name}}">
+                            </form>
+                        </td>
+                        <td>
+                            <button class="btn btn-secondary edit-btn">Edit</button>
+                        </td>
+                    </tr>
+                    @endforeach
+                @endif
+
+
+            {{-- <tr>
                 <td class="category-name">
                     <form class="edit-category-form"  method="POST">
                         @csrf
+                        <input type='number' name='id' value='{{}}'>
                         <span class="category-text">Cat</span>
                         <input type="text" name="category_name" class="form-control d-none" value="Cat">
                     </form>
@@ -38,7 +59,7 @@
                 <td>
                     <button class="btn btn-secondary edit-btn">Edit</button>
                 </td>
-            </tr>
+            </tr> --}}
             </tbody>
         </table>
     </div>

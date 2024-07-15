@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdoptController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\NearbyController;
@@ -87,3 +89,29 @@ Route::get('/adopt',[AdoptController::class, 'index'])->name('adopt.index');
 Route::post('/adopt/add',[AdoptController::class, 'adoptedPetAdd'])->name('adopt.add');
 
 Route::get('/adopt/pet/{adoptPetId}',[AdoptController::class, 'petIndex'])->name('adoptPet.index');
+
+Route::get('/user',[UserController::class, 'index'])->name('user.index');
+
+Route::post('/user/update',[UserController::class, 'update'])->name('user.update');
+
+Route::get('/admin/dashboard',[AdminController::class,'dashboardIndex'])->name('admin.dashboard.index');
+
+Route::get('/admin/accounts',[AdminController::class,'adminIndex'])->name('admin.accounts.index');
+
+Route::post('/admin/accounts/add',[AdminController::class,'adminAdd'])->name('admin.accounts.add');
+
+Route::get('/admin/users',[AdminController::class,'usersIndex'])->name('admin.users.index');
+
+Route::get('/admin/forumcategory',[AdminController::class,'forumCategoryIndex'])->name('admin.forumCategory.index');
+
+Route::post('admin/forumcategory/edit',[AdminController::class,'forumCategoryEdit'])->name('admin.forumCategory.edit');
+
+Route::post('admin/forumcategory/add',[AdminController::class,'forumCategoryAdd'])->name('admin.forumCategory.add');
+
+Route::get('/admin/request',[AdminController::class,'requestIndex'])->name('admin.request.index');
+
+Route::get('/admin/request/{requestId}',[AdminController::class,'requestDetailsIndex'])->name('admin.requestDetails.index');
+
+Route::get('/admin/request/{requestId}/approve',[AdminController::class,'requestApprove'])->name('admin.requestApprove');
+
+Route::get('/admin/request/{requestId}/decline',[AdminController::class,'requestDecline'])->name('admin.requestDecline');

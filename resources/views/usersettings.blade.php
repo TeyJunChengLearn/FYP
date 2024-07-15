@@ -9,30 +9,31 @@
         <div class="container"><h3><b>User Settings</b></h3>
         </div>
 
-        <form id="settingsForm" method="POST"  class="container m-5 p-4">
+        <form id="settingsForm" method="POST" action="{{route('user.update')}}"  class="container m-5 p-4">
+            @csrf
             <div class="row my-2">
                 <div class="col">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Username">
+                <input type="text" class="form-control" id="username" name='username' placeholder="Username" value='{{Auth::user()->username}}'>
                 </div>
                 <div class="col">
                 <label for="gender" class="form-label">Gender</label>
-                  <select class="form-control" id="gender">
-                      <option selected disabled>Gender</option>
-                      <option>Male</option>
-                      <option>Female</option>
+                  <select name='gender' class="form-control" id="gender">
+                      <option  disabled>Gender</option>
+                      <option value='0' @if(Auth::user()->gender==0)selected @endif>Male</option>
+                      <option value='1' @if(Auth::user()->gender==1)selected @endif>Female</option>
                   </select>
                 </div>
             </div>
             <div class="row my-2">
                 <div class="col">
                     <label for="dateofbirth" class="form-label">Date of Birth</label>
-                    <input type="date" class="form-control" id="dateofbirth">
+                    <input type="date" name='birthdate' class="form-control" id="dateofbirth" value="{{Auth::user()->birthdate}}">
 
                 </div>
                 <div class="col">
                     <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Email">
+                    <input type="text"name='email' class="form-control" id="email" placeholder="Email" value="{{Auth::user()->email}}">
 
                 </div>
             </div>

@@ -25,28 +25,28 @@
                 <a href="#" class="logo"><img src="/img/header-logo.png" alt=""/></a>
             </div>
             <div class="d-flex flex-column mb-auto gap-2">
-                <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
+                <a href="{{route('admin.dashboard.index')}}" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
                     <img src="/img/dashboard.png">
                     <span>Dashboard</span>
                 </a>
-                <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
+                <a href="{{route('admin.accounts.index')}}" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
                     <img src="/img/admin.png">
                     <span>Admins</span>
                 </a>
-                <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
+                <a href="{{route('admin.users.index')}}" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
                     <img src="/img/group.png">
                     <span>Users</span>
                 </a>
-                <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
+                <a href="{{route('admin.forumCategory.index')}}" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
                     <img src="/img/category.png">
                     <span>Forum Categories</span>
                 </a>
-                <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
+                <a href="{{route('admin.request.index')}}" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
                     <img src="/img/request.png">
                     <span>Requests</span>
                 </a>
             </div>
-            <a href="#" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
+            <a href="{{route('forum.index')}}" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">
                 <img src="/img/logout.png">
                 <span class="text-nowrap">Return to Forum</span>
             </a>

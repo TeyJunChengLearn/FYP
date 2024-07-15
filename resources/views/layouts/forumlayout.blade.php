@@ -1,3 +1,6 @@
+@php
+                    use Illuminate\Support\Facades\Session;
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,10 +33,13 @@
                 <li><a href="{{route('nearby.index')}}">Nearby</a></li>
 				<li><a href="{{route('forum.index')}}">Forum</a></li>
 				<li><a href="{{route('adopt.index')}}">Adopt/Marketplace</a></li>
-                <li><a href="">Adopt/Marketplace</a></li>
+                @if (Auth::user()&&Session::get('user')['admin']['status']==true)
+                    <li><a href="{{route('admin.dashboard.index')}}">Admin</a></li>
+                @endif
                 @if(Auth::user())
+
                 <li ><a id='notification' href="{{route('notifications.index')}}">Notifications</a></li>
-                <li><a href="#">{{Auth::user()->username}}</a></li>
+                <li><a href="{{route('user.index')}}">{{Auth::user()->username}}</a></li>
                 @endif
 				{{-- <li><a href="login.html">User</a></li> <!--changes between User and username--> --}}
 			</ul>

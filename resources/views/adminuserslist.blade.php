@@ -1,3 +1,6 @@
+@php
+    use Carbon\Carbon;
+@endphp
 @extends('layouts.admindashboardnavbar')
 @section('css')
 
@@ -19,7 +22,18 @@
                     </tr>
                 </thead>
                 <tbody id="petOwnersTable">
+                    @foreach ($petOwners as $petOwner)
                     <tr>
+                        <td>@if (empty($petOwner->username))
+                            No username
+                            @else
+                            {{$petOwner->username}}</td>
+                        @endif
+                        <td>{{$petOwner->email}}</td>
+                        <td>{{Carbon::parse($petOwner->created_at)->format('d-m-Y')}}</td>
+                    </tr>
+                    @endforeach
+                    {{-- <tr>
                         <td>jamieballs</td>
                         <td>jamieballs@gmail.com</td>
                         <td>12 July 2024</td>
@@ -58,7 +72,7 @@
                         <td>xuanxuan</td>
                         <td>jamieballs@gmail.com</td>
                         <td>12 July 2024</td>
-                    </tr>
+                    </tr> --}}
 
                 </tbody>
             </table>
@@ -78,7 +92,14 @@
                 </tr>
             </thead>
             <tbody id="animalShelterTable">
-            <tr>
+                @foreach ($animalRescuerAndShelters as $animalRescuerAndShelter)
+                <tr>
+                    <td>{{$animalRescuerAndShelter->name}}</td>
+                    <td>{{$animalRescuerAndShelter->petowner->email}}</td>
+                    <td>{{Carbon::parse($petOwner->created_at)->format('d-m-Y')}}</td>
+                </tr>
+                @endforeach
+            {{-- <tr>
                 <td>jamieballs</td>
                 <td>jamieballs@gmail.com</td>
                 <td>12 July 2024</td>
@@ -87,7 +108,7 @@
                 <td>jamieballs</td>
                 <td>jamieballs@gmail.com</td>
                 <td>12 July 2024</td>
-            </tr>
+            </tr> --}}
             </tbody>
         </table>
         </div>

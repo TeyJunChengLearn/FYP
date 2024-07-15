@@ -20,7 +20,7 @@
             <div>
                     @csrf
                     <label for="forumComment" class="form-label">Leave a Feedback</label>
-                    <textarea class="form-control" id="forumComment" rows="3" name='description' placeholder="Say something..."></textarea>
+                    <textarea class="form-control" id="forumComment" rows="3" name='description' placeholder="Say something..." required></textarea>
                     <input type="submit" class="btn btn-warning my-3" value="Submit">
                     {{-- Submit</button> --}}
             </div>

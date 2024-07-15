@@ -76,7 +76,7 @@
             <div>
                 @csrf
                 <label for="forumComment" class="form-label">Leave a Comment</label>
-                <textarea class="form-control" id="forumComment" rows="3" name='content' placeholder="Comment..."></textarea>
+                <textarea class="form-control" id="forumComment" rows="3" name='content' placeholder="Comment..." required></textarea>
                 <input type="submit" class="btn btn-warning my-3" value="Submit">
                 {{-- Submit</button> --}}
            </div>
