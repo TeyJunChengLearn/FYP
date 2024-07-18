@@ -22,7 +22,7 @@
     <div class="whole d-flex">
         <div class="flex-shrink-1 d-flex flex-column" style="background-color: #fff8f2">
             <div class="p-4">
-                <a href="#" class="logo"><img src="/img/header-logo.png" alt=""/></a>
+                <a href="/" class="logo"><img src="/img/header-logo.png" alt=""/></a>
             </div>
             <div class="d-flex flex-column mb-auto gap-2">
                 <a href="{{route('admin.dashboard.index')}}" class="d-flex align-items-center ps-4 w-100 gap-4 link text-decoration-none text-dark">

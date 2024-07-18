@@ -52,6 +52,10 @@ a {
                                 <option selected disabled>Pet Type</option>
                                 <option value='0'>Cat</option>
                                 <option value='1'>Dog</option>
+                                <option value='2'>Bird</option>
+                                <option value='3'>Fish</option>
+                                <option value='4'>Reptile</option>
+                                <option value='5'>Rodent</option>
                             </select>
                         </div>
                         <div class="col">
